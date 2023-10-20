@@ -14,14 +14,24 @@ class CartController extends Controller
         ]);
         $user = session('loginId');
         $menu = Menu::find($request->id);
-        $cart = new Cart;
-        $cart->quantity = $request->quantity;
-        $cart->id_user = $user;
-        $cart->id_menu = $menu->id;
-        $cart->name = $menu->menu_name;
-        $cart->price = $menu->price;
-        $cart->image = $menu->image;
-        $res = $cart->save();
+        $isAdded = Cart::where('id_menu', $menu->id)->where('id_user', $user)->first();
+        if(!$isAdded) {
+            $cart = new Cart;
+            $cart->quantity = $request->quantity;
+            $cart->id_user = $user;
+            $cart->id_menu = $menu->id;
+            $cart->name = $menu->menu_name;
+            $cart->price = $menu->price * $request->quantity;
+            $cart->image = $menu->image;
+            $res = $cart->save();
+        }
+        else {
+            $isAdded->quantity = $isAdded->quantity + $request->quantity;
+            $isAdded->price = $menu->price * $isAdded->quantity;
+            $isAdded->save();   
+        }
+        
+        
         return back();
         // return redirect('menu.cart', compact($cart));
     }
@@ -30,5 +40,14 @@ class CartController extends Controller
         $user = session('loginId');
         $cart = Cart::where('id_user', $user)->get();
         return view('menu.cart', compact('cart'));
+    }
+
+    public function delete_cart(Request $request) {
+        $user = session('loginId');
+        $menu = Menu::find($request->id);
+        $cart = Cart::find('id_menu', $request->id);
+        dd($cart);
+        $cart->delete();
+        return back();  
     }
 }

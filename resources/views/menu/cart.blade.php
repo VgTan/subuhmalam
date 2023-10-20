@@ -35,6 +35,10 @@
                 <p>{{ $obj->name }}</p>
                 <p>{{ $obj->price }}</p>
                 <p>{{ $obj->quantity }}</p>
+                <form action="{{ route('delete_cart') }}" type="post">
+                    <input class="hidden" type="text" name="id" value="{{ $obj->id_menu }}" />
+                    <input type="submit" value="×" class="font-bold text-red-500 no-underline text-xl absolute ml-3 ">
+                </form>
             </div>
             @endforeach
         </div>

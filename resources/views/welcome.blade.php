@@ -64,7 +64,7 @@
                                 <p class="text-5xl mb-5">Our Signature</p>
                                 <?php
                                 use App\Models\Menu;
-                                $rendang = Menu::find(1);
+                                $rendang = Menu::where('menu_name', 'Rendang')->first();
                                 ?>
                                 @if($rendang)
                                 <a href="{{'#'. $rendang->id}}" class="scroll-smooth focus:scroll-auto">
@@ -106,7 +106,7 @@
                 @foreach ($menu as $obj)
                 @if($i < 3) <!-- <a href="{{'#' . $obj->id}}" class="">SINIIIII</a> -->
                     <a href="{{ url('/menu' . '#' . $obj->id) }}" id="{{$obj->id}}"
-                        class="no-underline text-white hover:scale-105 bg-[#1F1F1F] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
+                        class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
                         id="{{$obj->id}}">
                         <div class="w-full flex justify-center h-full items-center">
                             <div class="w-3/4 h-full">
@@ -144,13 +144,13 @@
         </div>
         <div class="flex justify-center mt-7">
             <a href="/menu"
-                class="hover:scale-105 transition duration-500 text-3xl focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] rounded-2xl font-bold bg-[#F29A4B]">Explore
+                class="hover:scale-105 transition duration-500 text-xl focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] rounded-lg font-bold bg-[#F29A4B]">View
                 More</a>
         </div>
         @if(Session()->has('admin'))
         <div class="flex justify-center mt-3">
             <a href="/addmenu"
-                class="hover:scale-105 transition duration-500 text-3xl focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] rounded-2xl font-bold">Edit
+                class="hover:scale-105 transition duration-500 text-lg hover:text-[#F29A4B] focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] font-bold">Edit
                 Menu</a>
         </div>
         @endif

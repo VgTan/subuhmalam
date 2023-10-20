@@ -24,11 +24,11 @@
                 class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110  transition duration-300 ">Menu</a>
             @if(!Session()->has('loginId'))
             <a href="/login"
-                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Login</a>
+                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#A06235] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Login</a>
             @endif
             @if(Session()->has('loginId'))
             <a href="/logout"
-                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Logout</a>
+                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#A06235] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Logout</a>
             @endif
         </div>
     </header>
@@ -47,14 +47,14 @@
                         </div>
                         <div class="flex md:justify-center lg:justify-start">
                             <div
-                                class="m-4 ml-2 h-[60px] mt-7 bg-[#ff8400] hover:bg-[#ffb44a] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
+                                class="m-4 ml-2 h-[60px] mt-7 bg-[#F3A446] hover:bg-[#ffb44a] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
                                 <a href="#1"
                                     class="h-[60px] no-underline text-white text-2xl flex items-center justify-center">Buy
                                     Now</a>
                             </div>
                         </div>
                         <!-- <form action="{{route('addtocart')}}" method="post"
-                            class="m-4 ml-2 h-[60px] bg-[#ff8400] hover:bg-[#ffb44a] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
+                            class="m-4 ml-2 h-[60px] bg-[#A06235] hover:bg-[#ffb44a] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
                             @csrf
                             <div class="justify-center flex">
                                 <input type="submit" value="Buy Now"
@@ -75,12 +75,14 @@
         <div class="flex justify-center">
             <div class="text-white flex flex-wrap justify-center w-5/6 gap-10">
                 @foreach($menu as $obj)
-                <div class="bg-[#1F1F1F] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
+                <div class="bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#A06235] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
                     id="{{$obj->id}}">
+                    @if($obj->id != 1)
                     <form action="{{ route('delete_menu') }}" type="post">
                     <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
-                        <input type="submit" value="x" class="font-bold text-red-500 no-underline text-xl absolute ml-5">
+                        <input type="submit" value="×" class="font-bold text-red-500 no-underline text-xl absolute ml-3 ">
                     </form>
+                    @endif
                     <div class="w-full flex justify-center h-full items-center">
                         <div class="w-3/4 h-full">
                             <div class="flex justify-center h-2/3">
@@ -100,7 +102,7 @@
                                     </div>
                                     <div class="flex justify-end">
                                         <input type="submit" value="Add"
-                                            class="bg-[#F29A4B] px-3 w-2/3 rounded-xl hover:scale-105 focus:scale-75 transition duration-500">
+                                            class="bg-[#F3A446] px-3 w-2/3 cursor-pointer rounded-xl hover:scale-105 focus:scale-75 transition duration-500">
                                     </div>
                                 </form>
                                 <!-- <p class="lg:text-lg text-sm col-span-3">{{$obj->desc}}</p> -->

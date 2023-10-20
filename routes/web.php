@@ -45,3 +45,4 @@ Route::get('/menu/{id}', [MenuController::class, 'ShowMenu']);
 
 Route::post('/addcart', [CartController::class, 'addcart'])->name('addtocart')->middleware('isLoggedIn')   ;
 Route::get('/cart', [CartController::class, 'cart_items'])->middleware('isLoggedIn');
+Route::get('/deletecart', [CartController::class, 'delete_cart'])->name('delete_cart');
