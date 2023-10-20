@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,3 +41,6 @@ Route::post('/addmenu', [AdminController::class, 'add_menu'])->name('addMenu')->
 Route::get('/menu', [MenuController::class, 'menu'])->name('menu');
 Route::get('/menu/{id}', [MenuController::class, 'ShowMenu']);
 // Route::post('/addtomenu', [AdminController::class, 'addtomenu'])->name('addtomenu');
+
+Route::post('/addcart', [CartController::class, 'addcart'])->name('addtocart')->middleware('isLoggedIn')   ;
+Route::get('/cart', [CartController::class, 'cart_items'])->middleware('isLoggedIn');

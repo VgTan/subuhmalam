@@ -28,10 +28,19 @@
 
         </div>
     </header>
-
+    <div class="mt-[130px] pt-[50px] pb-[50px] grid grid-rows-auto justify-center ">
+        <div class="">
+            @foreach($cart as $obj)
+            <div class="text-white">
+                <p>{{ $obj->name }}</p>
+                <p>{{ $obj->price }}</p>
+                <p>{{ $obj->quantity }}</p>
+            </div>
+            @endforeach
+        </div>
+    </div>
     <footer class="h-[500px]">
         <div class="text-white">
-            <p>awdwaijdawjdiajdiadjapkdaiw</p>
         </div>
     </footer>
 </body>
