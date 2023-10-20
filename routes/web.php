@@ -36,4 +36,7 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 
 Route::post('/addmenu', [AdminController::class, 'add_menu'])->name('addMenu')->middleware('isAdmin');
+
+Route::get('/menu', [MenuController::class, 'menu'])->name('menu');
+Route::get('/menu/{id}', [MenuController::class, 'ShowMenu']);
 // Route::post('/addtomenu', [AdminController::class, 'addtomenu'])->name('addtomenu');

@@ -76,6 +76,6 @@ class AuthController extends Controller
         }
     }
     public function cart(){
-        return view('cart.cart');
+        return view('menu.cart');
     }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth transition duration-700">
 
 <head>
     <meta charset="UTF-8" />
@@ -44,7 +44,7 @@
                     <div class="flex md:justify-center lg:justify-start">
                         <div
                             class="m-4 ml-2 h-[60px] bg-[#ff8400] hover:bg-[#ffb44a] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
-                            <a class="h-[60px] no-underline text-white text-2xl flex items-center justify-center">Buy
+                            <a href="/menu" class="h-[60px] no-underline text-white text-2xl flex items-center justify-center">Buy
                                 Now</a>
                         </div>
                     </div>
@@ -61,10 +61,16 @@
                         <div class="flex gap-5 items-center ">
                             <div class="w-auto">
                                 <p class="text-5xl mb-5">Our Signature</p>
-                                <a href="">
-                                    <img class="w-[400px] hover:scale-110 hover:rotate-12 transition duration-700 hover:cursor-pointer"
+                                <?php
+                                use App\Models\Menu;
+                                $rendang = Menu::find(1);
+                                ?>
+                                @if($rendang)
+                                <a href="{{'#'. $rendang->id}}" class="scroll-smooth focus:scroll-auto">
+                                    <img class="w-[400px] hover:scale-110 hover:rotate-12 transition duration-500 hover:cursor-pointer border-collapse"
                                         src="./images/piring_rendang.png" />
                                 </a>
+                                @endif
                             </div>
                             <div class="w-2/3">
                                 <p class="text-2xl">Rendang bukan sekedar hidangan, tetapi telah menjadi
@@ -84,40 +90,43 @@
 
         </div>
     </div>
-    <div class="mt-[130px] pt-[50px] pb-[50px] flex justify-center bg-[#ff8400]">
-        <div class="text-white w-3/4">
+    <div
+        class="mt-[130px] pt-[50px] pb-[50px] grid grid-cols-auto justify-center bg-gradient-to-b from-[#ff8400] to-transparant">
+        <div class="text-white">
             <div class="text-center">
                 <p class="text-5xl mb-5">Explore Our Dishes</p>
             </div>
-            <div class="mt-[70px]">
-                <div class="flex gap-5 flex-wrap justify-center">
-                    @foreach ($menu as $obj)
-                    <div
-                        class="hover:scale-105 transition duration-300 border-[3px] border-white h-[250px] w-[150px] md:h-[500px] md:w-[400px] rounded-b-[25px] ">
-                        <div class="h-full w-full">
-                            <div class="flex justify-center h-3/4 w-full">
-                                <img class="object-cover w-full h-full" src="images/menu/{{$obj->image}}" alt="">
-                            </div>
-                            <div class="flex justify-center">
-                                <div class="m-5 text text-white flex justify-between items-center w-11/12">
-                                    <p class="lg:text-4xl text-lg col-span-2">{{$obj->menu_name}}</p>
-                                    <p class="lg:text-lg text-sm">Rp {{$obj->price}}</p>
-                                    <!-- <p class="lg:text-lg text-sm col-span-3">{{$obj->desc}}</p> -->
-                                </div>
+
+        </div>
+        <div class="mt-[70px]">
+            <div class="grid gap-5 grid-cols-3 justify-center">
+                @foreach ($menu as $obj)
+                <!-- <a href="{{'#' . $obj->id}}" class="">SINIIIII</a> -->
+                <a href="{{ url('/menu' . '#' . $obj->id) }}" id="{{$obj->id}}"
+                    class="no-underline hover:scale-105 transition duration-300 border-[3px] border-white h-[250px] w-[150px] md:h-[500px] md:w-[400px] rounded-b-[25px] ">
+                    <div class="h-full w-full">
+                        <div class="flex justify-center h-3/4 w-full">
+                            <img class="object-cover w-full h-full" src="images/menu/{{$obj->image}}" alt="">
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="m-5 text text-white flex justify-between items-center w-11/12">
+                                <p class="lg:text-4xl text-lg col-span-2">{{$obj->menu_name}}</p>
+                                <p class="lg:text-lg text-sm">Rp {{$obj->price}}</p>
+                                <!-- <p class="lg:text-lg text-sm col-span-3">{{$obj->desc}}</p> -->
                             </div>
                         </div>
                     </div>
-                    @endforeach
-                </div>
+                </a>
+                @endforeach
             </div>
-            @if(Session()->has('admin'))
-            <div class="flex justify-center mt-[80px]">
-                <a href="/addmenu"
-                    class="hover:scale-105 transition duration-500 text-3xl focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] rounded-2xl font-bold">Edit
-                    Menu</a>
-            </div>
-            @endif
         </div>
+        @if(Session()->has('admin'))
+        <div class="flex justify-center mt-[80px]">
+            <a href="/addmenu"
+                class="hover:scale-105 transition duration-500 text-3xl focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] rounded-2xl font-bold">Edit
+                Menu</a>
+        </div>
+        @endif
     </div>
     <footer class="h-[500px]">
         <div class="text-white">
