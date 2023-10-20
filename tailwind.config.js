@@ -12,6 +12,9 @@ export default {
         'circle': 'circle(50% at 50% 50%)',
         // Add more clip-path shapes as needed
       },
+      fontFamily: {
+        'belleza': ['belleza']
+      },
     },
   },
   plugins: [],

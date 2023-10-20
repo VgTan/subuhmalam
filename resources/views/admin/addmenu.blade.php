@@ -9,31 +9,7 @@
 </head>
 
 <body class="overflow-x-hidden bg-[url('./images/bg.jpg')] bg-contain" style="background-image: url('./images/bg.jpg')">
-    <header class="fixed flex items-center align-middle z-50 top-7 w-screen justify-center text-lg text-white">
-        <div class="w-1/3 text-center z-50">
-            <p class="text-xl font-bold hover:text-[#FFBB5C] transition duration-300 cursor-pointer">SubuhMalam</p>
-        </div>
-        <div class="w-2/3 flex justify-center gap-[90px] items-center">
-            <a href="/" class="no-underline z-50 text-white hover:text-[#FFBB5C] transition duration-300 ">Home</a>
-            <a href="/aboutus" class="no-underline z-50 text-white hover:text-[#FFBB5C] transition duration-300 ">About
-                Us</a>
-            <a href="/menu" class="no-underline z-50 text-white hover:text-[#FFBB5C] transition duration-300 ">Menu</a>
-            @if(!Session()->has('loginId'))
-            <a href="/login"
-                class="hover:scale-105 transition duration-500 no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Login</a>
-            @endif
-            @if(Session()->has('loginId'))
-            <a href="/logout"
-                class="hover:scale-105 transition duration-500 no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Logout</a>
-            @endif
-            @if(Session()->has('admin'))
-            <a href="/edit"
-                class="hover:scale-105 transition duration-500 no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Edit
-                Menu</a>
-            @endif
-
-        </div>
-    </header>
+    @include('header')
     <div class="w-screen h-screen mt-[300px] flex justify-center">
         <div class="w-4/5 grid grid-rows-auto lg:gap-[100px] gap-[50px]">
             <form action="{{route('addMenu')}}" method="post" autocomplete="off" enctype="multipart/form-data">

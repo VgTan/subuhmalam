@@ -39,11 +39,11 @@ class CartController extends Controller
     public function cart_items() {
         $user = session('loginId');
         $cart = Cart::where('id_user', $user)->get();
+        // dd($cart);
         return view('menu.cart', compact('cart'));
     }
 
     public function delete_cart(Request $request) {
-        $user = session('loginId');
         $menu = Menu::find($request->id);
         $cart = Cart::find($request->id);
         // dd($menu);

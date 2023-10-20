@@ -10,28 +10,7 @@
 
 <body class="overflow-x-hidden bg-[url('./images/bg.jpg')] bg-contain"
     style="background-image: url('../images/bg.jpg')">
-    <header class="fixed flex items-center align-middle z-50 top-7 w-screen justify-center text-lg text-white">
-        <div class="w-1/3 text-center z-50">
-            <p class="text-3xl font-bold hover:text-[#FFBB5C] transition duration-300 cursor-pointer">SubuhMalam</p>
-        </div>
-        <div class="w-2/3 flex justify-center gap-[90px] items-center">
-            <a href="/"
-                class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110 transition duration-300 ">Home</a>
-            <a href="/aboutus"
-                class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110  transition duration-300 ">About
-                Us</a>
-            <a href="/menu"
-                class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110  transition duration-300 ">Menu</a>
-            @if(!Session()->has('loginId'))
-            <a href="/login"
-                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#A06235] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Login</a>
-            @endif
-            @if(Session()->has('loginId'))
-            <a href="/logout"
-                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#A06235] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Logout</a>
-            @endif
-        </div>
-    </header>
+    @include('header')
     <div class="w-screen">
         <!-- <div class="z-30 absolute w-screen flex md:h-[500px] bg-black opacity-[.6] lg:h-[900px] h-[300px] items-center">
         </div> -->
@@ -71,17 +50,22 @@
         <div class="text-center text-white mb-[100px]">
             <p class="text-5xl">MENU</p>
         </div>
-
+        <div class="text-white" id="main">
+            <p>MAIN COURSE</p>
+        </div>
         <div class="flex justify-center">
             <div class="text-white flex flex-wrap justify-center w-5/6 gap-10">
-                @foreach($menu as $obj)
+                @foreach($main as $obj)
                 <div class="bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#A06235] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
                     id="{{$obj->id}}">
+                    @if(Session()->has('admin'))
                     @if($obj->id != 1)
                     <form action="{{ route('delete_menu') }}" type="post">
-                    <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
-                        <input type="submit" value="×" class="font-bold text-red-500 no-underline text-xl absolute ml-3 ">
+                        <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
+                        <input type="submit" value="×"
+                            class="font-bold text-red-500 no-underline text-xl absolute ml-3 ">
                     </form>
+                    @endif
                     @endif
                     <div class="w-full flex justify-center h-full items-center">
                         <div class="w-3/4 h-full">
@@ -98,7 +82,8 @@
                                     @csrf
                                     <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
                                     <div class="flex justify-end items-center">
-                                        <input class="text-black w-2/3 h-[30px] pl-2" name="quantity" type="number">
+                                        <input class="text-black w-2/3 h-[30px] pl-2" name="quantity" type="number"
+                                            value="0" min="0" max="10">
                                     </div>
                                     <div class="flex justify-end">
                                         <input type="submit" value="Add"

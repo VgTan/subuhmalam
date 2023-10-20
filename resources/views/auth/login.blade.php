@@ -15,17 +15,27 @@
 </head>
 
 <body class="overflow-x-hidden bg-cover" style="background-image: url('./images/bg.jpg')">
-    <header class="fixed flex items-center align-middle z-50 top-7 w-screen justify-center text-lg text-white">
-        <div class="w-1/3 text-center z-50">
-            <p class="text-xl font-bold hover:text-[#FFBB5C] cursor-pointer">SubuhMalam</p>
+    <header
+        class="fixed flex items-center align-middle z-50 top-7 w-screen justify-center text-lg text-white m-0 p-0 h-[70px]">
+        <div class="flex items-center justify-center z-50 w-1/3">
+            <img src="./images/logo.png" class="w-1/3" alt="">
         </div>
         <div class="w-2/3 flex justify-center gap-[90px] items-center">
-            <a href="/" class="no-underline z-50 text-white hover:text-[#FFBB5C]">Home</a>
-            <a href="/aboutus" class="no-underline z-50 text-white hover:text-[#FFBB5C]">About Us</a>
-            <a href="/menu" class="no-underline z-50 text-white hover:text-[#FFBB5C]">Menu</a>
+            <a href="/"
+                class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110 transition duration-300 ">Home</a>
+            <a href="/aboutus"
+                class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110  transition duration-300 ">About
+                Us</a>
+            <a href="/menu"
+                class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110  transition duration-300 ">Menu</a>
+            @if(!Session()->has('loginId'))
             <a href="/signup"
-                class="hover:scale-105 transition duration-500 no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Sign
-                Up</a>
+                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Sign Up</a>
+            @endif
+            @if(Session()->has('loginId'))
+            <a href="/logout"
+                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Logout</a>
+            @endif
         </div>
     </header>
 
@@ -41,7 +51,7 @@
                 class="absolute text-center font-bold text-white z-30 md:w-1/3 md:h-2/3 w-2/5 h-2/5 flex justify-center items-center">
                 <p class="lg:text-5xl md:text-xl text-lg">Salmoik <br>Tibo!</p>
             </div>
-            <div class="text-white w-1/2 text-center flex justify-center items-center bg-gray-900 h-full">
+            <div class="text-white w-1/2 text-center flex justify-center items-center bg-[#1D1D1D] h-full">
                 <div class="md:h-auto h-5/6 w-5/6 items-center flex">
                     <div class="w-full">
                         <p class="font-bold md:text-5xl text-xl md:mb-[80px]">Log In</p>

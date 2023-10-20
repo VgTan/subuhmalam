@@ -13,7 +13,9 @@ class MenuController extends Controller
             $logged_id = User::find($logginid);
         }    
         $menu = Menu::all();
-        return view('menu.listmenu', compact('menu'));
+        $main = Menu::where('category', 'main_course')->get();
+        // dd($main);
+        return view('menu.listmenu', compact('menu', 'main'));
     }
 
     public function ShowMenu($id) {
