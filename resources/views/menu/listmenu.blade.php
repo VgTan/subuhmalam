@@ -71,12 +71,16 @@
         <div class="text-center text-white mb-[100px]">
             <p class="text-5xl">MENU</p>
         </div>
-        
+
         <div class="flex justify-center">
             <div class="text-white flex flex-wrap justify-center w-5/6 gap-10">
                 @foreach($menu as $obj)
                 <div class="bg-[#1F1F1F] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
                     id="{{$obj->id}}">
+                    <form action="{{ route('delete_menu') }}" type="post">
+                    <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
+                        <input type="submit" value="x" class="font-bold text-red-500 no-underline text-xl absolute ml-5">
+                    </form>
                     <div class="w-full flex justify-center h-full items-center">
                         <div class="w-3/4 h-full">
                             <div class="flex justify-center h-2/3">
@@ -92,7 +96,7 @@
                                     @csrf
                                     <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
                                     <div class="flex justify-end items-center">
-                                        <input class="text-black w-2/3 h-[30px]" name="quantity" type="number">
+                                        <input class="text-black w-2/3 h-[30px] pl-2" name="quantity" type="number">
                                     </div>
                                     <div class="flex justify-end">
                                         <input type="submit" value="Add"

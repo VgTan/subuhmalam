@@ -39,4 +39,11 @@ class AdminController extends Controller
             return back();
         }
     }
+    public function delete_menu(Request $request) {
+        $menu = Menu::find($request->id);
+        if($menu) {
+            $menu->delete();
+            return back();
+        }
+    }
 }
