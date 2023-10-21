@@ -14,7 +14,12 @@ export default {
       },
       fontFamily: {
         'belleza': ['belleza'],
-        'playfair': ['playfairdisplay']
+        'playfair': ['playfairdisplay'],
+        'charmonman': ['charmonman'],
+        'lancelot' : ['lancelot'],
+        'worksans' : ['worksans'],
+        'balo' : ['balobhai'],
+        'archivobold' : ['archivobold']
       },
     },
   },

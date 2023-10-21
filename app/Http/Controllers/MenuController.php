@@ -14,11 +14,6 @@ class MenuController extends Controller
         }    
         $menu = Menu::all();
         $category = 'all';
-        // $main = Menu::where('category', 'main_course')->get();
-        // $side = Menu::where('category', 'side_dish')->get();
-        // $extra = Menu::where('category', 'extra')->get();
-        // dd($main);
-        // return view('menu.listmenu', compact('menu', 'main', 'side','extra'));
         return view('menu.listmenu', compact('menu', 'category'));
     }
     public function filter_menu(Request $request) {

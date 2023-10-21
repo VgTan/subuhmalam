@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +39,9 @@ Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::post('/addmenu', [AdminController::class, 'add_menu'])->name('addMenu')->middleware('isAdmin');
 Route::get('/deletemenu', [AdminController::class, 'delete_menu'])->name('delete_menu')->middleware('isAdmin');
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
 
 Route::get('/menu', [MenuController::class, 'menu'])->name('menu');
 Route::get('/menu/{id}', [MenuController::class, 'ShowMenu']);
@@ -47,3 +51,5 @@ Route::get('/filter', [MenuController::class, 'filter_menu'])->name('filter_menu
 Route::post('/addcart', [CartController::class, 'addcart'])->name('addtocart')->middleware('isLoggedIn')   ;
 Route::get('/cart', [CartController::class, 'cart_items'])->middleware('isLoggedIn');
 Route::get('/deletecart', [CartController::class, 'delete_cart'])->name('delete_cart');
+
+Route::get('/checkout', [OrderController::class,'check_out'])->name('pay');

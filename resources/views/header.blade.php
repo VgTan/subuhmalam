@@ -16,6 +16,10 @@
             <a href="/login"
                 class="hover:scale-105 font-belleza transition duration-500 text-xl no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Login</a>
             @endif
+            @if(Session()->has('admin'))
+            <a href="/dashboard"
+                class="hover:scale-105 font-belleza transition duration-500 text-xl no-underline z-50 text-white bg-[#1D1D1D] hover:bg-[#212121] px-[30px] py-[6px] rounded-2xl font-bold">Dashboard</a>
+            @endif
             @if(Session()->has('loginId'))
             <a href="/logout"
                 class="hover:scale-105 font-belleza transition duration-500 text-xl no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Logout</a>

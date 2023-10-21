@@ -27,11 +27,13 @@
                                 @enderror
                             </p>
 
-                            <select name="category" class="text-black rounded-md md:pl-3 pl-1 md:h-[40px] h-[10px] py-2 md:text-lg text-[7px] w-full mt-5" id="">
+                            <select name="category"
+                                class="text-black rounded-md md:pl-3 pl-1 md:h-[40px] h-[10px] py-2 md:text-lg text-[7px] w-full mt-5"
+                                id="">
                                 <option selected value="">Category</option>
                                 <option value="main_course">Main Course</option>
                                 <option value="side_dish">Side Dish</option>
-                                <option value="extra">Extra</option>
+                                <option value="extra">Drink</option>
                             </select>
                             <p class="text-danger absolute text-sm text-red-600">@error('category') {{$message}}
                                 @enderror
@@ -67,22 +69,22 @@
                         <div class="flex justify-center">
                             <div class="">
                                 <div
-                                    class="hover:scale-105 transition duration-300 border-[3px] border-white h-[250px] w-[150px] md:h-[700px] md:w-[530px] rounded-b-[25px] lg:pt-9 p-auto">
+                                    class="bg-[#1D1D1D] bg-opacity-80 z-1 rounded-2xl hover:bg-[#A06235] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl">
                                     @if(isset($menu))
-                                    <div class="h-full w-full">
-                                        <div class="flex justify-center h-3/4">
-                                            <img class="" src="images/menu/{{$menu->image}}" alt="">
-                                        </div>
-                                        <!-- <div class="text-center text-white flex items-center h-1/4">
-                                            <div class="w-full">
-                                                <p class="lg:text-4xl text-lg">{{$menu->menu_name}}</p>
-                                                <p class="lg:text-lg text-sm">Rp {{$menu->price}}</p>
+
+                                    <div class="w-full flex justify-center h-full items-center">
+                                        <div class="w-3/4 h-full">
+                                            <div class="flex justify-center h-2/3">
+                                                <img class="object-contain h-full" src="/images/menu/{{$menu->image}}"
+                                                    alt="">
                                             </div>
-                                        </div> -->
-                                        <div class="flex justify-center">
-                                            <div class="m-5 text text-white flex justify-between items-center w-11/12">
-                                                <p class="lg:text-4xl text-lg col-span-2">{{$menu->menu_name}}</p>
-                                                <p class="lg:text-lg text-sm">Rp {{$menu->price}}</p>
+                                            <div class="grid grid-cols-3 grid-flow-row text-white">
+                                                <div class="grid grid-rows-2 col-span-2 gap-2 items-center">
+                                                    <p class="text-2xl col-span-2 font-archivobold">
+                                                        {{$menu->menu_name}}</p>
+                                                    <p class="lg:text-lg text-sm font-worksans">Rp {{$menu->price}}
+                                                    </p>
+                                                </div>
                                                 <!-- <p class="lg:text-lg text-sm col-span-3">{{$menu->desc}}</p> -->
                                             </div>
                                         </div>
@@ -96,11 +98,7 @@
         </div>
     </div>
     </div>
-    <footer class="h-[500px]">
-        <div class="text-white">
-            <p>awdwaijdawjdiajdiadjapkdaiw</p>
-        </div>
-    </footer>
+    @include('footer')
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 <footer class="absolute w-full h-[500px] border-t-[4px] border-[#ff8400] bg-[#F29A4B] bg-opacity-30 mt-[150px]">
         <div class="text-white flex flex-wrap gap-10 justify-center mt-[100px] items-center">
             <div class="logo">
-                <p class="text-3xl">SubuhMalam</p>
+                <img src="./images/logo.png" alt="">
                 <p>Continue SubuhMalam 2023 all rights reserved.</p>
             </div>
             <div class="flex gap-10 flex-wrap">

@@ -20,6 +20,30 @@
   @font-face {
     font-family: 'Belleza';
     src: url('/resources/css/fonts/Belleza-Regular.ttf');
+    font-family: 'lancelot';
+    src: url('/resources/css/fonts/Lancelot-Regular.ttf');
+  }
+  @font-face {
     font-family: 'PlayfairDisplay';
-    src: url('/resources/css/fonts/PlayfairDisplay-Regular.ttf')
+    src: url('/resources/css/fonts/PlayfairDisplay-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'charmonman';
+    src: url('/resources/css/fonts/Charmonman-Bold.ttf');
+  }
+  @font-face {
+    font-family: 'lancelot';
+    src: url('/resources/css/fonts/Lancelot-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'worksans';
+    src: url('/resources/css/fonts/WorkSans-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'balobhai';
+    src: url('/resources/css/fonts/BalooBhai2-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'archivobold';
+    src: url('/resources/css/fonts/ArchivoNarrow-Bold.ttf');
   }

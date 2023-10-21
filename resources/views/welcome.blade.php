@@ -40,7 +40,7 @@
                     <div class="md:text-center lg:text-left grid grid-cols-1 gap-14">
                         <p class="md:text-5xl lg:text-7xl text-[#ff8400] font-playfair tracking-wide">Padang Lamak
                             Berkualitas<br>Ado di Siko</p>
-                        <p class="pl-2 mt-1 text-gray-300 lg:text-2xl tracking-wide">Makanan khas Padang dengan rempah
+                        <p class="pl-2 mt-1 text-gray-300 lg:text-2xl tracking-wide font-lancelot">Makanan khas Padang dengan rempah
                             asli
                             menjadikannya<br>kaya akan cita rasa</p>
                         <div class="flex md:justify-center lg:justify-start">
@@ -122,12 +122,12 @@
                                 @endif
                             </div>
                             <div class="lg:w-3/5 lg:text-left text-center">
-                                <p class="lg:text-4xl text-2xl text-[#ff8400] font-playfair tracking-wide">The Finest
+                                <p class="text-xl text-[#ff8400] italic tracking-wide">The Finest
                                     Dish <br />
                                 </p>
-                                <p class="lg:text-6xl text-3xl mb-10 text-[#ff8400] font-playfair tracking-wide">Rendang
+                                <p class="lg:text-8xl text-3xl mb-10 text-[#ff8400] font-charmonman tracking-wide">Rendang
                                 </p>
-                                <p class="lg:text-xl text-md">Rendang bukan sekedar hidangan, tetapi telah menjadi
+                                <p class="lg:text-2xl text-md font-lancelot tracking-wide">Rendang bukan sekedar hidangan, tetapi telah menjadi
                                     bagian tak terisahkan dari
                                     budaya dan identitas kuliner Padang,
                                     Rendang dikenal dengan cita rasa gurih, pedas, dan
@@ -221,7 +221,7 @@
                             </div>
                             <div class="flex justify-center items-center h-full">
                                 <div class="text-center h-2/3 w-2/3">
-                                    <p class="text-4xl">Main Dishes</p>
+                                    <p class="text-4xl font-playfair">Main Dishes</p>
                                     <p class="mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
                                         cita rasa pedas,
                                         manis,
@@ -243,7 +243,7 @@
                             </div>
                             <div class="flex justify-center items-center h-full">
                                 <div class="text-center h-2/3 w-2/3">
-                                    <p class="text-4xl">Side Dishes</p>
+                                    <p class="text-4xl font-playfair">Side Dishes</p>
                                     <p class="mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
                                         cita rasa pedas,
                                         manis,
@@ -261,12 +261,12 @@
                     <div class="w-full flex justify-center items-center">
                         <div class="w-full h-full">
                             <div class="flex justify-center h-1/3">
-                                <img class="object-contain h-[250px] rounded-xl" src="/images/piring_rendang.png"
+                                <img class="object-contain h-[250px] rounded-xl" src="/images/drink.png"
                                     alt="">
                             </div>
                             <div class="flex justify-center items-center h-full">
                                 <div class="text-center h-2/3 w-2/3">
-                                    <p class="text-4xl">Extra</p>
+                                    <p class="text-4xl font-playfair">Drinks</p>
                                     <p class="mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
                                         cita rasa pedas,
                                         manis,
@@ -279,19 +279,11 @@
                 </button>
             </form>
         </div>
-        <div class="flex justify-center mt-7">
+        <!-- <div class="flex justify-center mt-7">
             <a href="/menu"
-                class="hover:scale-105 transition duration-500 text-xl focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] rounded-lg font-bold bg-[#ff8400]">View
+                class="hover:scale-105 transition duration-500 text-xl focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] rounded-lg font-bold bg-[#ff8400] italic">View
                 More</a>
-        </div>
-        @if(Session()->has('admin'))
-        <div class="flex justify-center mt-3">
-            <a href="/addmenu"
-                class="hover:scale-105 transition duration-500 text-lg hover:text-[#F29A4B] focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] font-bold">Edit
-                Menu</a>
-        </div>
-        @endif
-
+        </div> -->
     </div>
     @include('footer')
 </body>
