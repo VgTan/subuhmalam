@@ -11,11 +11,11 @@
 <body class="overflow-x-hidden bg-[url('./images/bg.jpg')] bg-contain" style="background-image: url('./images/bg.jpg')">
     @include('header')
     <div class="w-screen h-screen mt-[300px] flex justify-center">
-        <div class="w-4/5 grid grid-rows-auto lg:gap-[100px] gap-[50px]">
+        <div class="w-4/5 grid  lg:gap-[100px] gap-[50px]">
             <form action="{{route('addMenu')}}" method="post" autocomplete="off" enctype="multipart/form-data">
                 @csrf
                 <div class="text-black">
-                    <div class="grid lg:grid-cols-2 grid-rows-2 md:gap-3">
+                    <div class="grid lg:grid-cols-2 md:gap-3">
                         <div class="w-full">
                             <div class="mb-[60px] text-center">
                                 <p class="text-[#ff8400] text-5xl">ADD NEW MENU</p>
@@ -85,7 +85,6 @@
                                                     <p class="lg:text-lg text-sm font-worksans">Rp {{$menu->price}}
                                                     </p>
                                                 </div>
-                                                <!-- <p class="lg:text-lg text-sm col-span-3">{{$menu->desc}}</p> -->
                                             </div>
                                         </div>
                                     </div>
@@ -95,6 +94,13 @@
                         </div>
                     </div>
             </form>
+            <div class="flex justify-center">
+                <div class="bg-[#ff8400] rounded-md mt-2 h-auto hover:scale-105 hover:bg-[#ff9500] py-[8px] 
+                    transition duration-500 focus:scale-90 ">
+                    <a href="/menu" class="no-underline text-white  px-[50px] py-[8px]">Delete
+                        Menu</a>
+                </div>
+            </div>
         </div>
     </div>
     </div>

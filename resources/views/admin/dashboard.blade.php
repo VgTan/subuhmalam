@@ -13,6 +13,7 @@
     <div class="w-screen h-screen mt-[300px] flex justify-center">
         <div class="">
             <a href="/addmenu">Add New Menu</a>
+            <a href="/menu">Delete Menu</a>
             <a href="/order">Check Orders</a>
         </div>
     </div>
