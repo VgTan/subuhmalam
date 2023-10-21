@@ -19,14 +19,14 @@
                 <div class="flex items-center col-span-3">
                     <div class="md:text-center lg:text-left lg:ml-0 ml-8">
                         <div class="grid gap-4">
-                            <p class="md:text-5xl lg:text-8xl">Rendang Spesial</p>
+                            <p class="md:text-5xl lg:text-8xl font-playfair text-[#ff8400]">Rendang Spesial</p>
                             <p class="pl-2 mt-1 text-gray-300 lg:text-2xl">Potongan daging lembut yang meresap dalam
                                 rempah-rempah kaya dengan cita rasa pedas manis, menciptakan pengalaman kuliner yang
                                 memanjakan lidah Anda. Sajian penuh kenikmatan yang melebur dalam setiap gigitannya.</p>
                         </div>
                         <div class="flex md:justify-center lg:justify-start">
                             <div
-                                class="m-4 ml-2 h-[60px] mt-7 bg-[#F3A446] hover:bg-[#ffb44a] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
+                                class="m-4 ml-2 h-[60px] mt-7 bg-[#ff8400] hover:bg-[#F3A446] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
                                 <a href="#1"
                                     class="h-[60px] no-underline text-white text-2xl flex items-center justify-center">Buy
                                     Now</a>
@@ -47,23 +47,74 @@
                 </div>
             </div>
         </div>
-        <div class="text-center text-white mb-[100px]">
-            <p class="text-5xl">MENU</p>
-        </div>
-        <div class="text-white" id="main">
-            <p>MAIN COURSE</p>
+        <div class="flex justify-center">
+            <div class="w-4/6">
+                <div class="text-center text-white mb-[90px]" id="menu">
+                    <p class="text-7xl font-belleza tracking-wider">M E N U</p>
+                </div>
+            </div>
         </div>
         <div class="flex justify-center">
-            <div class="text-white flex flex-wrap justify-center w-5/6 gap-10">
-                @foreach($main as $obj)
-                <div class="bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#A06235] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
+            <div class="flex justify-start relative w-1/12 h-auto items-center">
+                <div class="sticky  rounded-r-full w-full h-full">
+                    <form action="{{ route('filter_menu') }}" class="text-white mt-5 grid grid-rows-4 gap-10">
+                        @csrf
+                        @if($category == 'all')
+                        <div
+                            class="bg-[#ff8400] scale-125 transition duration-300 rounded-r-full h-[100px] flex items-center justify-center">
+                            @else
+                            <div
+                                class="bg-[#A06235] hover:scale-110 hover:origin-left transition duration-300 rounded-r-full h-[100px] flex items-center justify-center">
+                                @endif
+                                <button type="submit" class="transition duration-300" name="category" value="all"><img
+                                        src="./images/all.png" class="w-[150px]" alt=""></button>
+                            </div>
+                            @if($category == 'main_course')
+                            <div
+                                class="bg-[#ff8400] scale-125 transition duration-300 rounded-r-full h-[100px] flex items-center justify-center">
+                                @else
+                                <div
+                                    class="bg-[#A06235] hover:scale-110 hover:origin-left transition duration-300 rounded-r-full h-[100px] flex justify-center items-center">
+                                    @endif
+                                    <button type="submit" class="transition duration-300" name="category"
+                                        value="main_course"><img src="./images/main.png" class="w-[80px]"
+                                            alt=""></button>
+                                </div>
+                                @if($category == 'side_dish')
+                                <div
+                                    class="bg-[#ff8400] scale-125 transition duration-300 rounded-r-full h-[100px] flex items-center justify-center">
+                                    @else
+                                    <div
+                                        class="bg-[#A06235] hover:scale-110 hover:origin-left transition duration-300 rounded-r-full h-[100px] flex items-center justify-center">
+                                        @endif
+                                        <button type="submit" class="transition duration-300" name="category"
+                                            value="side_dish"><img src="./images/side.png" class="w-[120px]"
+                                                alt=""></button>
+                                    </div>
+                                    @if($category == 'extra')
+                                    <div
+                                        class="bg-[#ff8400] scale-125 transition duration-300 rounded-r-full h-[100px] flex items-center justify-center">
+                                        @else
+                                        <div
+                                            class="bg-[#A06235] hover:scale-110 hover:origin-left transition duration-300 rounded-r-full h-[100px] flex items-center justify-center">
+                                            @endif
+                                            <button type="submit" class="transition duration-300" name="category"
+                                                value="extra"><img src="./images/extra.png" class="w-[100px] "
+                                                    alt=""></button>
+                                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-white flex flex-wrap justify-center w-10/12 gap-10">
+                @foreach($menu as $obj)
+                <div class="bg-[#1D1D1D] bg-opacity-80 z-1 rounded-2xl hover:bg-[#A06235] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
                     id="{{$obj->id}}">
                     @if(Session()->has('admin'))
                     @if($obj->id != 1)
-                    <form action="{{ route('delete_menu') }}" type="post">
+                    <form action="{{ route('delete_menu') }}" type="post" class="absolute text-right w-[330px] mt-3">
                         <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
                         <input type="submit" value="×"
-                            class="font-bold text-red-500 no-underline text-xl absolute ml-3 ">
+                            class="font-bold text-red-500 no-underline hover:scale-110 cursor-pointer z-10 text-3xl">
                     </form>
                     @endif
                     @endif
@@ -83,7 +134,7 @@
                                     <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
                                     <div class="flex justify-end items-center">
                                         <input class="text-black w-2/3 h-[30px] pl-2" name="quantity" type="number"
-                                            value="0" min="0" max="10">
+                                            value="" min="1" max="10">
                                     </div>
                                     <div class="flex justify-end">
                                         <input type="submit" value="Add"
@@ -97,6 +148,7 @@
                 </div>
                 @endforeach
             </div>
+            <div class="w-1/12"></div>
         </div>
     </div>
     <div class="absolute bottom-5 right-5">
@@ -109,10 +161,7 @@
                     Menu</a>
             </div>
             @endif -->
-    <footer class="h-[500px]">
-        <div class="text-white">
-        </div>
-    </footer>
+    @include('footer')
 </body>
 
 </html>

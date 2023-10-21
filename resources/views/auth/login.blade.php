@@ -16,7 +16,7 @@
 
 <body class="overflow-x-hidden bg-cover" style="background-image: url('./images/bg.jpg')">
     <header
-        class="fixed flex items-center align-middle z-50 top-7 w-screen justify-center text-lg text-white m-0 p-0 h-[70px]">
+        class="fixed font-belleza flex items-center align-middle z-50 top-7 w-screen justify-center text-lg text-white m-0 p-0 h-[70px]">
         <div class="flex items-center justify-center z-50 w-1/3">
             <img src="./images/logo.png" class="w-1/3" alt="">
         </div>

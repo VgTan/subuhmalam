@@ -13,7 +13,8 @@ export default {
         // Add more clip-path shapes as needed
       },
       fontFamily: {
-        'belleza': ['belleza']
+        'belleza': ['belleza'],
+        'playfair': ['playfairdisplay']
       },
     },
   },

@@ -55,11 +55,7 @@
             @endif -->
         </div>
     </div>
-    <footer class="h-[500px]">
-        <div class="text-white">
-            <p>awdwaijdawjdiajdiadjapkdaiw</p>
-        </div>
-    </footer>
+    @include('footer')
 </body>
 
 </html>

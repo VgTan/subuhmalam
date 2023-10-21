@@ -44,7 +44,6 @@ class CartController extends Controller
     }
 
     public function delete_cart(Request $request) {
-        $menu = Menu::find($request->id);
         $cart = Cart::find($request->id);
         // dd($menu);
         $cart->delete();

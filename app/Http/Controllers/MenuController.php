@@ -13,11 +13,24 @@ class MenuController extends Controller
             $logged_id = User::find($logginid);
         }    
         $menu = Menu::all();
-        $main = Menu::where('category', 'main_course')->get();
+        $category = 'all';
+        // $main = Menu::where('category', 'main_course')->get();
+        // $side = Menu::where('category', 'side_dish')->get();
+        // $extra = Menu::where('category', 'extra')->get();
         // dd($main);
-        return view('menu.listmenu', compact('menu', 'main'));
+        // return view('menu.listmenu', compact('menu', 'main', 'side','extra'));
+        return view('menu.listmenu', compact('menu', 'category'));
     }
-
+    public function filter_menu(Request $request) {
+        $category = $request->input('category');
+        if($category != 'all'){
+        $menu = Menu::where('category', $category)->get();
+        }
+        else {
+            $menu = Menu::all();
+        }
+        return view('menu.listmenu', compact('menu', 'category'));
+    }
     public function ShowMenu($id) {
         $menu = Menu::find($id);
         // dd($menu);

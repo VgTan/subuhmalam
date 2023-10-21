@@ -16,3 +16,10 @@
       @apply text-blue-600 underline;
     }
   }
+
+  @font-face {
+    font-family: 'Belleza';
+    src: url('/resources/css/fonts/Belleza-Regular.ttf');
+    font-family: 'PlayfairDisplay';
+    src: url('/resources/css/fonts/PlayfairDisplay-Regular.ttf')
+  }
