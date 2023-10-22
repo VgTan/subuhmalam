@@ -13,7 +13,7 @@
 
     <div class="w-screen h-screen flex justify-center items-center">
         <div class="flex items-center w-full justify-center">
-            <div class="w-1/4">
+            <div class="w-1/2">
                 @if($order->isEmpty())
                 <div class="text-white font-worksans text-center text-3xl">
                     <p>No Order</p>
@@ -21,35 +21,41 @@
                 @else
                 @foreach($detail->groupBy('order_id') as $id => $items)
                 @php
-                    $status = $order->where('id', $id)->first()->status;
+                $status = $order->where('id', $id)->first()->status;
                 @endphp
                 @if($status == 'Working On')
                 <div
-                    class="text-black bg-white w-full mt-5 grid grid-cols-1 justify-center items-center h-[200px] rounded-2xl">
-                    <div class="text-center flex justify-center">
-                        <div class="w-1/12"></div>
-                        <div class="w-11/12">
-                            <p>{{ $id }}</p>
+                    class="text-black bg-white w-full mt-5 grid grid-cols-1 justify-center items-center pt-5 pb-10 rounded-2xl">
+                    <div class="text-center justify-center">
+                        <div class="w-full">
+                            <p class="text-3xl">{{ $id }}</p>
                         </div>
-                        <form action="{{ route('change_status') }}" class="flex justify-end w-1/12">
+                        <form action="{{ route('change_status') }}" class="flex justify-center items-center">
                             <input type="text" class="hidden" name="order_id" value="{{ $id }}">
-                            <select name="status" onchange="submit()">
+                            <select name="status" class="text-xl" onchange="submit()">
                                 <option value="{{ $status }}">{{ $status }}</option>
                                 <option value="Done">Done</option>
                             </select>
                         </form>
                     </div>
-
-                    @foreach($items as $obj)
-                    <div class="w-full flex justify-between">
-                        <div class="flex justify-center items-center w-1/2">
-                            <p>{{ $obj->item }}</p>
-                        </div>
-                        <div class="flex justify-center items-center w-1/2">
-                            <p>{{ $obj->qty }}</p>
+                    <div class="mt-5">
+                        <div class="w-full grid grid-cols-2 text">
+                            <div class="flex justify-center items-center mb-5">
+                                <p class="text-2xl">Items</p>
+                            </div>
+                            <div class="flex justify-center items-center mb-5">
+                                <p class="text-2xl">Quantity</p>
+                            </div>
+                            @foreach($items as $obj)
+                            <div class="flex justify-center items-center">
+                                <p class="text-xl">{{ $obj->item }}</p>
+                            </div>
+                            <div class="flex justify-center items-center">
+                                <p class="text-xl">{{ $obj->qty }}</p>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
-                    @endforeach
                 </div>
                 @endif
                 @endforeach
