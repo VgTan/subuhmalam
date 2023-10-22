@@ -43,7 +43,7 @@
                 </div>
                 @endforeach
                 <form action="{{ route('pay') }}"
-                    class="text-black text-xs bg-white w-full mt-5 grid grid-cols-6 justify-center items-center h-[50px] rounded-2xl">
+                    class="text-black lg:text-lg text-xs bg-white w-full mt-5 grid grid-cols-6 justify-center items-center h-[50px] rounded-2xl">
                     <div class="col-span-3 flex justify-center">
                         <label>Total</label>
                     </div>

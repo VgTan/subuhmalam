@@ -23,13 +23,13 @@
                                 rempah-rempah kaya dengan cita rasa pedas manis, menciptakan pengalaman kuliner yang
                                 memanjakan lidah Anda. Sajian penuh kenikmatan yang melebur dalam setiap gigitannya.</p>
                         </div>
-                        <div class="flex md:justify-center lg:justify-start">
-                            <div
-                                class="m-4 ml-2 h-[60px] mt-7 bg-[#ff8400] hover:bg-[#F3A446] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
-                                <a href="#1"
-                                    class="h-[60px] no-underline text-white text-2xl flex items-center justify-center">Buy
-                                    Now</a>
-                            </div>
+                        <div class="flex md:justify-center lg:justify-start text-center">
+                            <form action="{{ route('filter_menu') }}"
+                                class="m-4 ml-2 h-[60px] mt-7 bg-[#ff8400] hover:bg-[#F3A446] text-center hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
+                                <button type="submit" name="category" value="main_course"
+                                    class="h-[60px] no-underline text-white w-full text-2xl flex items-center justify-center">Buy
+                                    Now</button>
+                            </form>
                         </div>
                     </div>
                 </div>

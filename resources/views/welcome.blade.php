@@ -67,7 +67,7 @@
         <div class="text-white w-11/12">
             <div class="lg:flex grid justify-center gap-2 items-center w-full">
                 <div class="lg:w-2/5 flex justify-center">
-                    <a href="" class="scroll-smooth focus:scroll-auto flex lg:justify-end justify-center">
+                    <a class="scroll-smooth focus:scroll-auto flex lg:justify-end justify-center">
                         <img class="lg:w-full w-2/5 hover:scale-110 hover:rotate-12 transition duration-500 hover:cursor-pointer border-collapse"
                             src="./images/piring_rendang.png" />
                     </a>
