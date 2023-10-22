@@ -48,6 +48,7 @@
                         <p>Rp </p>
                         <input type="number" name="total_price" value="{{ $total }}" disabled>
                     </div>
+                    <input type="text" class="hidden" name="status" value="Working On">
                     <div class="col-span-2 flex justify-center">
                         <button type="submit" href="" class="hover:scale-110 transition duration-300">Check Out</button>
                     </div>

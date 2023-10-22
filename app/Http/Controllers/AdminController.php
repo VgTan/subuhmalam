@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Menu;
+use App\Models\Order;
+use App\Models\OrderDetail;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -45,5 +47,19 @@ class AdminController extends Controller
             $menu->delete();
             return back();
         }
+    }
+    public function check() {
+        $order = Order::all();
+        $detail = OrderDetail::all();
+
+        // dd($id);
+        return view('admin.check', compact('order', 'detail'));
+    }
+
+    public function change_status(Request $request) {
+        $order = Order::find($request->order_id);
+        $order->status = $request->status;
+        $order->save();
+        return back();
     }
 }

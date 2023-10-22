@@ -14,7 +14,7 @@
         <div class="">
             <a href="/addmenu">Add New Menu</a>
             <a href="/menu">Delete Menu</a>
-            <a href="/order">Check Orders</a>
+            <a href="{{ route('check') }}">Check Orders</a>
         </div>
     </div>
     @include('footer')

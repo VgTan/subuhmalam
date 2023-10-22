@@ -210,9 +210,9 @@
         <div class="">
             <form action="{{ route('filter_menu') }}" class="flex flex-wrap gap-9 justify-center items-center">
                 @csrf
-                <button type="submit" name="category" value="main_course" id="{{$obj->id}}"
+                <button type="submit" name="category" value="main_course"
                     class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl rounded-tl-[200px] rounded-br-[200px]"
-                    id="{{$obj->id}}">
+                   >
                     <div class="w-full flex justify-center items-center">
                         <div class="">
                             <div class="flex justify-center h-1/3">
@@ -233,9 +233,9 @@
                     </div>
                 </button>
 
-                <button type="submit" name="category" value="side_dish" id="{{$obj->id}}"
+                <button type="submit" name="category" value="side_dish" id=""
                     class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl rounded-tl-[200px] rounded-br-[200px]"
-                    id="{{$obj->id}}">
+                    id="">
                     <div class="w-full flex justify-center items-center">
                         <div class="w-full h-full">
                             <div class="flex justify-center h-1/3">
@@ -255,9 +255,9 @@
                     </div>
                 </button>
 
-                <button type="submit" name="category" value="extra" id="{{$obj->id}}"
+                <button type="submit" name="category" value="extra" id=""
                     class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl rounded-tl-[200px] rounded-br-[200px]"
-                    id="{{$obj->id}}">
+                    id="">
                     <div class="w-full flex justify-center items-center">
                         <div class="w-full h-full">
                             <div class="flex justify-center h-1/3">
