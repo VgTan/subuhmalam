@@ -10,7 +10,7 @@
 
 <body class="overflow-x-hidden bg-[url('./images/bg.jpg')] bg-contain" style="background-image: url('./images/bg.jpg')">
     @include('header')
-    <div class="w-screen h-screen mt-[300px] flex justify-center">
+    <div class="w-screen h-screen lg:pt-[300px] pt-[100px] flex justify-center">
         <div class="w-4/5 grid  lg:gap-[100px] gap-[50px]">
             <form action="{{route('addMenu')}}" method="post" autocomplete="off" enctype="multipart/form-data">
                 @csrf

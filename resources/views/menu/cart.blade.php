@@ -20,9 +20,12 @@
                 </div>
                 @else
                 <?php $total = 0 ?>
+                <div class="text-center text-white font-archivobold lg:text-2xl text-xl">
+                    <p>C A R T</p>
+                </div>
                 @foreach($cart as $obj)
                 <div
-                    class="text-black bg-white w-full mt-5 grid grid-cols-6 justify-center items-center h-[80px] rounded-2xl">
+                    class="text-black bg-white w-full mt-5 grid grid-cols-6 justify-center items-center h-[80px] rounded-2xl font-balo lg:text-lg text-sm">
                     <div class="text-center col-span-2">
                         <p>{{ $obj->name }}</p>
                     </div>

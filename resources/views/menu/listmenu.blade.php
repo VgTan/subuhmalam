@@ -12,9 +12,7 @@
     style="background-image: url('../images/bg.jpg')">
     @include('header')
     <div class="w-screen">
-        <!-- <div class="z-30 absolute w-screen flex md:h-[500px] bg-black opacity-[.6] lg:h-[900px] h-[300px] items-center">
-        </div> -->
-        <div class="flex w-screen lg:h-[900px] md:h-[500px] justify-center items-center text-white z-40">
+        <div class="lg:flex hidden w-screen lg:h-[900px] md:h-[500px] justify-center items-center text-white z-40">
             <div class="lg:grid lg:grid-cols-5 w-5/6 flex lg:mt-0 mt-[150px]">
                 <div class="flex items-center col-span-3">
                     <div class="md:text-center lg:text-left lg:ml-0 ml-8">
@@ -33,14 +31,6 @@
                                     Now</a>
                             </div>
                         </div>
-                        <!-- <form action="{{route('addtocart')}}" method="post"
-                            class="m-4 ml-2 h-[60px] bg-[#A06235] hover:bg-[#ffb44a] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
-                            @csrf
-                            <div class="justify-center flex">
-                                <input type="submit" value="Buy Now"
-                                    class="h-[60px] no-underline text-white text-2xl flex items-center justify-center">
-                            </div>
-                        </form> -->
                     </div>
                 </div>
                 <div class="flex justify-center w-full col-span-2">
@@ -48,23 +38,47 @@
                 </div>
             </div>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center lg:pt-0 pt-[150px]">
             <div class="w-4/6">
-                <div class="text-center text-white mb-[90px]" id="menu">
-                    <p class="text-7xl font-charmonman tracking-wider">MENU</p>
+                <div class="text-center text-white lg:mb-[90px] mb-[50px]" id="menu">
+                    <p class="lg:text-7xl text-4xl font-charmonman tracking-wider">MENU</p>
+                    <form action="{{ route('filter_menu') }}">
+                        <select name="category" onchange="submit()"
+                            class="lg:hidden py-2.5 px-0 w-full text-white text-xs bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer ">
+                            <option class="bg-[#1D1D1D] text-center text-xs" value="all">All</option>
+                            @if($category == 'main_course')
+                            <option class="bg-[#1D1D1D] text-center text-xs" selected value="main_course">Main Course
+                            </option>
+                            @else
+                            <option class="bg-[#1D1D1D] text-center text-xs" value="main_course">Main Course</option>
+                            @endif
+                            @if($category == 'side_dish')
+                            <option class="bg-[#1D1D1D] text-center text-xs" selected value="side_dish">Side Course
+                            </option>
+                            @else
+                            <option class="bg-[#1D1D1D] text-center text-xs" value="side_dish">Side Course</option>
+                            @endif
+                            @if($category == 'extra')
+                            <option class="bg-[#1D1D1D] text-center text-xs" selected value="extra">Extra</option>
+                            @else
+                            <option class="bg-[#1D1D1D] text-center text-xs" value="extra">Extra</option>
+                            @endif
+                        </select>
+                    </form>
                     @if(Session()->has('admin'))
                     <div class="flex justify-center mt-3">
                         <a href="/addmenu"
-                            class="font-balo hover:scale-105 transition duration-500 text-lg hover:text-[#F29A4B] focus:scale-90 no-underline z-50 text-white px-[30px] py-[6px] font-bold">Edit
+                            class="z-0 font-balo hover:scale-105 transition duration-500 lg:text-lg text-xs hover:text-[#F29A4B] focus:scale-90 no-underline text-white px-[30px] py-[6px] font-bold">Edit
                             Menu</a>
                     </div>
                     @endif
                 </div>
             </div>
         </div>
-        <div class="flex justify-center">
-            <div class="flex justify-start relative w-1/12 h-auto items-center">
-                <div class="sticky  rounded-r-full w-full h-full">
+
+        <div class="flex justify-center lg:mb-0">
+            <div class="lg:flex hidden justify-start relative w-1/12 h-auto items-center">
+                <div class="sticky rounded-r-full w-full h-full">
                     <form action="{{ route('filter_menu') }}" class="text-white mt-5 grid grid-rows-4 gap-10">
                         @csrf
                         @if($category == 'all')
@@ -113,118 +127,123 @@
                     </form>
                 </div>
             </div>
-            <div class="text-white flex flex-wrap justify-center w-10/12 gap-10">
+
+            <div class="text-white flex flex-wrap justify-center w-10/12 lg:gap-10 gap-3">
                 @foreach($menu as $obj)
                 @if($obj->category != 'extra')
-                <div class="bg-[#1D1D1D] bg-opacity-80 z-1 rounded-2xl hover:bg-[#A06235] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
+                <div class="bg-[#1D1D1D] bg-opacity-80 z-1 rounded-2xl hover:bg-[#A06235] hover:bg-opacity-70 transition duration-300 lg:w-[350px] lg:h-[450px] w-[150px] h-[200px] shadow-2xl"
                     id="{{$obj->id}}">
                     @if(Session()->has('admin'))
                     @if($obj->id != 1)
-                    <form action="{{ route('delete_menu') }}" type="post" class="absolute text-right w-[330px] mt-3">
+                    <form action="{{ route('delete_menu') }}" type="post"
+                        class="absolute text-right lg:w-[330px] w-[140px] lg:mt-3">
                         <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
                         <input type="submit" value="×"
-                            class="font-bold text-red-500 no-underline hover:scale-110 cursor-pointer z-10 text-3xl">
+                            class="font-bold text-red-500 no-underline hover:scale-110 cursor-pointer z-10 lg:text-3xl">
                     </form>
                     @endif
                     @endif
                     <div class="w-full flex justify-center h-full items-center">
-                        <div class="w-3/4 h-full">
-                            <div class="flex justify-center h-2/3">
+                        <div class="lg:w-3/4 w-full h-full">
+                            <div class="flex justify-center lg:h-2/3 h-[100px]">
                                 <img class="object-contain h-full" src="/images/menu/{{$obj->image}}" alt="">
                             </div>
-                            <div class="grid grid-cols-3 grid-flow-row">
-                                <div class="grid grid-rows-2 col-span-2 gap-2 items-center">
-                                    <p class="text-2xl col-span-2 font-archivobold">{{$obj->menu_name}}</p>
-                                    <p class="lg:text-lg text-sm font-worksans">Rp {{$obj->price}}</p>
-                                </div>
-                                <form action="{{ route('addtocart')}}" class="text-white w-full grid grid-rows-2 gap-2"
-                                    method="post">
-                                    @csrf
-                                    <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
-                                    <div class="flex justify-end items-center">
-                                        <!-- <input class="text-white w-2/3 h-[30px] pl-2 bg-transparent border-[1px] border-[#ff8400]" name="quantity" type="number"
-                                            value="" min="1" max="10"> -->
-                                        <div class="flex w-5/6 relative bg-transparent mt-1">
+                            <div class="flex justify-center">
+                                <div class="grid lg:grid-cols-3 grid-cols-2 grid-flow-row lg:w-full w-3/4">
+                                    <div class="grid grid-rows-2 lg:col-span-2 gap-2 items-center">
+                                        <p class="lg:text-2xl text-sm lg:col-span-2 font-archivobold">
+                                            {{$obj->menu_name}}
+                                        </p>
+                                        <p class="lg:text-lg text-[9.5px] font-worksans">Rp {{$obj->price}}</p>
+                                    </div>
+                                    <form action="{{ route('addtocart')}}"
+                                        class="text-white w-full grid grid-rows-2 gap-2" method="post">
+                                        @csrf
+                                        <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
+                                        <div class="flex justify-end items-center">
                                             <button type="button" data-action="decrement"
-                                                class="bg-transparent text-[#ff8400] hover:text-[#F29A4B] h-full w-1/4 cursor-pointer outline-none border-[1px] border-[#ff8400] rounded-l-full">
-                                                <span class="m-auto text-2xl font-thin hover:scale-110">−</span>
+                                                class="flex justify-center items-center bg-transparent text-[#ff8400] hover:text-[#F29A4B] lg:h-full w-[15px] h-[20px] cursor-pointer outline-none border-[1px] border-[#ff8400] rounded-l-full">
+                                                <span class="lg:text-lg text-xs font-thin hover:scale-110">−</span>
                                             </button>
                                             <input type="number"
-                                                class="ocus:outline-none text-center w-1/2 bg-transparent font-semibold text-md hover:text-[#F29A4B] md:text-basecursor-default flex items-center text-[#ff8400] outline-none border-[1px] border-[#ff8400]"
-                                                name="quantity" value="0" min="1" max="10"></input>
+                                                class="focus:outline-none text-center lg:w-1/2 w-[20px] lg:h-full h-[20px] bg-transparent font-semibold lg:text-lg text-xs hover:text-[#F29A4B] md:text-base cursor-default flex items-center text-[#ff8400] outline-none border-[1px] border-[#ff8400]"
+                                                name="quantity" value="0" min="1" max="10">
+                                            </input>
                                             <button type="button" data-action="increment"
-                                                class="bg-transparent text-[#ff8400] hover:text-[#F29A4B] h-full w-1/4 cursor-pointer outline-none border-[1px] border-[#ff8400] rounded-r-full">
-                                                <span class="m-auto text-2xl font-thin">+</span>
+                                                class="flex justify-center items-center bg-transparent text-[#ff8400] hover:text-[#F29A4B] lg:h-full w-[15px] h-[20px] cursor-pointer outline-none border-[1px] border-[#ff8400] rounded-r-full">
+                                                <span class="lg:text-lg text-xs font-thin">+</span>
                                             </button>
                                         </div>
-
-                                    </div>
-                                    <div class="flex justify-end">
-                                        <input type="submit" value="Add"
-                                            class="bg-[#ff8400] px-3 w-5/6 cursor-pointer rounded-xl hover:scale-105 focus:scale-75 transition duration-500">
-                                    </div>
-                                </form>
-                                <!-- <p class="lg:text-lg text-sm col-span-3">{{$obj->desc}}</p> -->
+                                        <div class="flex justify-end">
+                                            <input type="submit" value="Add"
+                                                class="bg-[#ff8400] lg:px-3 px-2 lg:h-full h-[24px] w-5/6 lg:text-lg text-xs cursor-pointer rounded-xl hover:scale-105 focus:scale-75 transition duration-500">
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 @elseif($category == 'extra')
-                <div class="bg-[#1D1D1D] bg-opacity-80 z-1 rounded-2xl hover:bg-[#A06235] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
+                <div class="bg-[#1D1D1D] bg-opacity-80 z-1 rounded-2xl hover:bg-[#A06235] hover:bg-opacity-70 transition duration-300 lg:w-[350px] lg:h-[450px] w-[150px] h-[200px] shadow-2xl"
                     id="{{$obj->id}}">
                     @if(Session()->has('admin'))
                     @if($obj->id != 1)
-                    <form action="{{ route('delete_menu') }}" type="post" class="absolute text-right w-[330px] mt-3">
+                    <form action="{{ route('delete_menu') }}" type="post"
+                        class="absolute text-right lg:w-[330px] w-[140px] lg:mt-3">
                         <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
                         <input type="submit" value="×"
-                            class="font-bold text-red-500 no-underline hover:scale-110 cursor-pointer z-10 text-3xl">
+                            class="font-bold text-red-500 no-underline hover:scale-110 cursor-pointer z-10 lg:text-3xl">
                     </form>
                     @endif
                     @endif
                     <div class="w-full flex justify-center h-full items-center">
-                        <div class="w-3/4 h-full">
-                            <div class="flex justify-center h-2/3">
+                        <div class="lg:w-3/4 w-full h-full">
+                            <div class="flex justify-center lg:h-2/3 h-[100px]">
                                 <img class="object-contain h-full" src="/images/menu/{{$obj->image}}" alt="">
                             </div>
-                            <div class="grid grid-cols-3 grid-flow-row">
-                                <div class="grid grid-rows-2 col-span-2 gap-2 items-center">
-                                    <p class="text-2xl col-span-2 font-archivobold">{{$obj->menu_name}}</p>
-                                    <p class="lg:text-lg text-sm font-worksans">Rp {{$obj->price}}</p>
-                                </div>
-                                <form action="{{ route('addtocart')}}" class="text-white w-full grid grid-rows-2 gap-2"
-                                    method="post">
-                                    @csrf
-                                    <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
-                                    <div class="flex justify-end items-center">
-                                        <div class="flex w-5/6 relative bg-transparent mt-1">
+                            <div class="flex justify-center">
+                                <div class="grid lg:grid-cols-3 grid-cols-2 grid-flow-row lg:w-full w-3/4">
+                                    <div class="grid grid-rows-2 lg:col-span-2 gap-2 items-center">
+                                        <p class="lg:text-2xl text-sm lg:col-span-2 font-archivobold">
+                                            {{$obj->menu_name}}
+                                        </p>
+                                        <p class="lg:text-lg text-[9.5px] font-worksans">Rp {{$obj->price}}</p>
+                                    </div>
+                                    <form action="{{ route('addtocart')}}"
+                                        class="text-white w-full grid grid-rows-2 gap-2" method="post">
+                                        @csrf
+                                        <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
+                                        <div class="flex justify-end items-center">
                                             <button type="button" data-action="decrement"
-                                                class="bg-transparent text-[#ff8400] hover:text-[#F29A4B] h-full w-1/4 cursor-pointer outline-none border-[1px] border-[#ff8400] rounded-l-full">
-                                                <span class="m-auto text-2xl font-thin hover:scale-110">−</span>
+                                                class="flex justify-center items-center bg-transparent text-[#ff8400] hover:text-[#F29A4B] lg:h-full w-[15px] h-[20px] cursor-pointer outline-none border-[1px] border-[#ff8400] rounded-l-full">
+                                                <span class="lg:text-lg text-xs font-thin hover:scale-110">−</span>
                                             </button>
                                             <input type="number"
-                                                class="ocus:outline-none text-center w-1/2 bg-transparent font-semibold text-md hover:text-[#F29A4B] md:text-basecursor-default flex items-center text-[#ff8400] outline-none border-[1px] border-[#ff8400]"
-                                                name="quantity" value="0" min="1" max="10"></input>
+                                                class="focus:outline-none text-center lg:w-1/2 w-[20px] lg:h-full h-[20px] bg-transparent font-semibold lg:text-lg text-xs hover:text-[#F29A4B] md:text-base cursor-default flex items-center text-[#ff8400] outline-none border-[1px] border-[#ff8400]"
+                                                name="quantity" value="0" min="1" max="10">
+                                            </input>
                                             <button type="button" data-action="increment"
-                                                class="bg-transparent text-[#ff8400] hover:text-[#F29A4B] h-full w-1/4 cursor-pointer outline-none border-[1px] border-[#ff8400] rounded-r-full">
-                                                <span class="m-auto text-2xl font-thin">+</span>
+                                                class="flex justify-center items-center bg-transparent text-[#ff8400] hover:text-[#F29A4B] lg:h-full w-[15px] h-[20px] cursor-pointer outline-none border-[1px] border-[#ff8400] rounded-r-full">
+                                                <span class="lg:text-lg text-xs font-thin">+</span>
                                             </button>
                                         </div>
-                                    </div>
-                                    <div class="flex justify-end">
-                                        <input type="submit" value="Add"
-                                            class="bg-[#ff8400] px-3 w-5/6 cursor-pointer rounded-xl hover:scale-105 focus:scale-75 transition duration-500">
-                                    </div>
-                                </form>
+                                        <div class="flex justify-end">
+                                            <input type="submit" value="Add"
+                                                class="bg-[#ff8400] lg:px-3 px-2 lg:h-full h-[24px] w-5/6 lg:text-lg text-xs cursor-pointer rounded-xl hover:scale-105 focus:scale-75 transition duration-500">
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
                 @endif
                 @endforeach
             </div>
-            <div class="w-1/12"></div>
+            <div class="lg:w-1/12"></div>
         </div>
-    </div>  
+    </div>
     <div class="fixed bottom-10 right-10 z-50">
         <a href="/cart"
             class="flex hover:scale-110 transition duration-300 items-center rounded-full bg-[#ff8400] w-[80px] h-[80px]"><img
