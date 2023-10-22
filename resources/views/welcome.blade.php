@@ -28,7 +28,7 @@
                                 class="no-underline flex justify-center items-center m-4 ml-2 mt-4 md:h-[60px] md:w-1/4 h-[40px] w-1/4 bg-[#1D1D1D] hover:bg-[#232323] hover:scale-105 trasition duration-500 cursor-pointer rounded-sm">
                                 <div class="md:w-11/12 flex md:justify-between justify-center w-full">
                                     <p
-                                        class="font-belleza md:w-full tracking-wide md:ml-5 md:h-[60px] h-[40px] text-white md:text-lg text-xs flex items-center">
+                                        class="font-belleza md:w-full tracking-wide md:ml-5 md:h-[60px] h-[40px] text-white md:text-xl text-xs flex items-center">
                                         About
                                         Us</p>
 
@@ -41,7 +41,7 @@
                                 class="no-underline flex justify-center items-center m-4 ml-2 mt-4 md:h-[60px] md:w-1/4 h-[40px] w-1/4 bg-[#ff8400] hover:bg-[#ff8c12] hover:scale-105 trasition duration-500 cursor-pointer rounded-sm">
                                 <div class="md:w-11/12 flex md:justify-between justify-center w-full">
                                     <div
-                                        class="font-belleza md:w-full tracking-wide md:ml-5 md:h-[60px] h-[40px] text-white md:text-lg text-xs flex items-center">
+                                        class="font-belleza md:w-full tracking-wide md:ml-5 md:h-[60px] h-[40px] text-white md:text-xl text-xs flex items-center">
                                         Menu</div>
                                     <div class="md:flex justify-end w-full items-center mr-4 hidden">
                                         <img src="./images/arrow.png" class="md:w-[20px] mh-[25px]" alt="">
@@ -96,7 +96,7 @@
                             <div class="w-11/12 flex justify-between text-center">
                                 <div class="w-full text-start">
                                     <div
-                                        class="lg:text-lg text-sm font-belleza tracking-wide pl-5 w-full h-[60px] text-white flex items-center">
+                                        class="lg:text-2xl text-sm font-belleza tracking-wide pl-5 w-full h-[60px] text-white flex items-center">
                                         Menu
                                     </div>
                                 </div>

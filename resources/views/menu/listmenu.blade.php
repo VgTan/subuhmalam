@@ -42,29 +42,45 @@
             <div class="w-4/6">
                 <div class="text-center text-white lg:mb-[90px] mb-[50px]" id="menu">
                     <p class="lg:text-7xl text-4xl font-charmonman tracking-wider">MENU</p>
-                    <form action="{{ route('filter_menu') }}">
-                        <select name="category" onchange="submit()"
-                            class="lg:hidden py-2.5 px-0 w-full text-white text-xs bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer ">
-                            <option class="bg-[#1D1D1D] text-center text-xs" value="all">All</option>
-                            @if($category == 'main_course')
-                            <option class="bg-[#1D1D1D] text-center text-xs" selected value="main_course">Main Course
-                            </option>
-                            @else
-                            <option class="bg-[#1D1D1D] text-center text-xs" value="main_course">Main Course</option>
-                            @endif
-                            @if($category == 'side_dish')
-                            <option class="bg-[#1D1D1D] text-center text-xs" selected value="side_dish">Side Course
-                            </option>
-                            @else
-                            <option class="bg-[#1D1D1D] text-center text-xs" value="side_dish">Side Course</option>
-                            @endif
-                            @if($category == 'extra')
-                            <option class="bg-[#1D1D1D] text-center text-xs" selected value="extra">Extra</option>
-                            @else
-                            <option class="bg-[#1D1D1D] text-center text-xs" value="extra">Extra</option>
-                            @endif
-                        </select>
-                    </form>
+                    <div class="relative inline-flex text-left w-2/3">
+                        <div class="relative w-full">
+                            <form action="{{ route('filter_menu') }}" class="transition duration-300">
+                                <select name="category" onchange="submit()"
+                                    class="lg:hidden py-2.5 px-0 w-full text-white text-xs bg-transparent border-0 border-b-2 border-gray-200 appearance-none transition duration-300 focus:outline-none focus:ring-0 focus:border-[#ff8400] peer ">
+                                    <option class="bg-[#1D1D1D] text-center text-xs" value="all">All</option>
+                                    @if($category == 'main_course')
+                                    <option class="bg-[#1D1D1D] text-center text-xs" selected value="main_course">Main
+                                        Course
+                                    </option>
+                                    @else
+                                    <option class="bg-[#1D1D1D] text-center text-xs" value="main_course">Main Course
+                                    </option>
+                                    @endif
+                                    @if($category == 'side_dish')
+                                    <option class="bg-[#1D1D1D] text-center text-xs" selected value="side_dish">Side
+                                        Course
+                                    </option>
+                                    @else
+                                    <option class="bg-[#1D1D1D] text-center text-xs" value="side_dish">Side Course
+                                    </option>
+                                    @endif
+                                    @if($category == 'extra')
+                                    <option class="bg-[#1D1D1D] text-center text-xs" selected value="extra">Drinks
+                                    </option>
+                                    @else
+                                    <option class="bg-[#1D1D1D] text-center text-xs" value="extra">Extra</option>
+                                    @endif
+                                </select>
+                                <div
+                                    class="lg:hidden pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#ff8400]">
+                                    <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20">
+                                        <path d="M7 10l5 5 5-5H7z" />
+                                    </svg>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     @if(Session()->has('admin'))
                     <div class="flex justify-center mt-3">
                         <a href="/addmenu"
@@ -121,7 +137,7 @@
                                             class="bg-[#A06235] hover:scale-110 hover:origin-left transition duration-300 rounded-r-full h-[100px] flex items-center justify-center">
                                             @endif
                                             <button type="submit" class="transition duration-300" name="category"
-                                                value="extra"><img src="./images/extra.png" class="w-[100px] "
+                                                value="extra"><img src="./images/extra.png" class="w-[80px] "
                                                     alt=""></button>
                                         </div>
                     </form>
@@ -139,7 +155,7 @@
                         class="absolute text-right lg:w-[330px] w-[140px] lg:mt-3">
                         <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
                         <input type="submit" value="×"
-                            class="font-bold text-red-500 no-underline hover:scale-110 cursor-pointer z-10 lg:text-3xl">
+                            class="font-bold text-red-500 no-underline hover:scale-150 transition duration-300 cursor-pointer z-10 lg:text-3xl">
                     </form>
                     @endif
                     @endif

@@ -37,13 +37,13 @@
                     </div>
                     <form action="{{ route('delete_cart') }}" class="flex">
                         <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
-                        <input type="submit" value="×" class="font-bold text-red-500 no-underline text-xl w-full">
+                        <input type="submit" value="×" class="font-bold hover:scale-125 transition duration-300 cursor-pointer text-red-500 no-underline lg:text-2xl text-xl w-full">
                     </form>
                     <?php $total = $obj->price + $total ?>
                 </div>
                 @endforeach
                 <form action="{{ route('pay') }}"
-                    class="text-black bg-white w-full mt-5 grid grid-cols-6 justify-center items-center h-[50px] rounded-2xl">
+                    class="text-black text-xs bg-white w-full mt-5 grid grid-cols-6 justify-center items-center h-[50px] rounded-2xl">
                     <div class="col-span-3 flex justify-center">
                         <label>Total</label>
                     </div>
@@ -57,9 +57,9 @@
                     </div>
                 </form>
                 @endif
-                <div class="text-center flex justify-center">
+                <div class="text-center flex justify-center mt-5">
                     <div class="hover:text-[#ff8c00] hover:scale-110 w-auto transition duration-300">
-                        <a href="/menu" class="no-underline text-[#ff8400] text-xl ">Back to Menu</a>
+                        <a href="/menu" class="no-underline text-[#ff8400] lg:text-xl text-sm ">Back to Menu</a>
                     </div>
                 </div>
             </div>
