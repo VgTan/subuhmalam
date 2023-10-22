@@ -51,9 +51,9 @@ class AdminController extends Controller
     public function check() {
         $order = Order::all();
         $detail = OrderDetail::all();
-
+        $orderstatus = Order::select('status')->get(); 
         // dd($id);
-        return view('admin.check', compact('order', 'detail'));
+        return view('admin.check', compact('order', 'detail', 'orderstatus'));
     }
 
     public function change_status(Request $request) {

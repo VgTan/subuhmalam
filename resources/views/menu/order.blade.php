@@ -10,14 +10,17 @@
 
 <body class="overflow-x-hidden bg-contain" style="background-image: url('./images/bg.jpg')">
     @include('header')
-    <div class="w-screen mt-[200px] flex justify-center items-center">
+    <div class="w-screen pt-[200px] flex justify-center items-center">
         <div class="flex flex-wrap items-center w-full justify-center">
             <div class="w-1/2">
                 @if($order->isEmpty())
-                <div class="text-white font-worksans text-center text-3xl">
-                    <p>No Order</p>
+                <div class="mt-[200px]">
+                    <div class="text-white font-worksans text-center text-3xl">
+                        <p>No Order</p>
+                    </div>
                 </div>
                 @else
+
                 <div class="text-white text-center text-4xl">
                     <p>Orders</p>
                 </div>
@@ -64,11 +67,11 @@
                     class="text-black bg-white w-full mt-5 grid grid-cols-1 justify-center items-center pt-5 pb-10 rounded-2xl">
                     <div class="w-full grid h-5/6">
                         <div class="w-full">
-                            <div class="flex justify-center text-sm">
-                                <p>{{ $obj->created_at }}</p>
-                            </div>
                             <div class="flex justify-center text-xl">
                                 <p>{{ $obj->status }}</p>
+                            </div>
+                            <div class="flex justify-center text-sm">
+                                <p>{{ $obj->created_at }}</p>
                             </div>
                         </div>
                         @foreach($detail->groupBy('order_id') as $id => $items)
@@ -96,7 +99,9 @@
             </div>
         </div>
     </div>
-    @include('footer')
+    <div class="h-full bottom-0 w-full p-0 m-0">
+        @include('footer')
+    </div>
 </body>
 
 </html>

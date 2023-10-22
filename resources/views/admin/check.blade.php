@@ -10,11 +10,11 @@
 
 <body class="overflow-x-hidden bg-contain" style="background-image: url('./images/bg.jpg')">
     @include('header')
-
+    
     <div class="w-screen h-screen flex justify-center items-center">
         <div class="flex items-center w-full justify-center">
             <div class="w-1/2">
-                @if($order->isEmpty())
+                @if($order->isEmpty() || $order->every(function($order) { return $order->status == 'Done'; }) == 'Done')
                 <div class="text-white font-worksans text-center text-3xl">
                     <p>No Order</p>
                 </div>
@@ -60,7 +60,7 @@
                 @endif
                 @endforeach
                 @endif
-                <div class="text-center flex justify-center">
+                <div class="text-center flex justify-center mt-5">
                     <div class="hover:text-[#ff8c00] hover:scale-110 w-auto transition duration-300">
                         <a href="/menu" class="no-underline text-[#ff8400] text-xl ">Back to Menu</a>
                     </div>

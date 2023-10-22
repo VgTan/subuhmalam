@@ -47,3 +47,7 @@
     font-family: 'archivobold';
     src: url('/resources/css/fonts/ArchivoNarrow-Bold.ttf');
   }
+  @font-face {
+    font-family: 'kaushan';
+    src: url('/resources/css/fonts/KaushanScript-Regular.ttf');
+  }

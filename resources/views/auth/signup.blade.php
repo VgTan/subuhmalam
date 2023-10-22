@@ -27,7 +27,7 @@
             </div>
             <div
                 class="absolute text-center font-bold text-white z-30 md:w-1/3 md:h-2/3 w-2/5 h-2/5 flex justify-center items-center">
-                <p class="lg:text-5xl md:text-xl text-lg">Salmoik <br>Tibo!</p>
+                <p class="font-kaushan font-light lg:text-6xl md:text-xl ">Salmoik <br>Tibo!</p>
             </div>
             <div class="text-white w-1/2 text-center flex justify-center items-center bg-[#1D1D1D] h-full">
                 <div class="md:h-auto h-5/6 w-5/6 items-center flex">

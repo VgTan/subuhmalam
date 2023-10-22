@@ -15,29 +15,39 @@
 </head>
 
 <body class="overflow-x-hidden bg-cover" style="background-image: url('./images/bg.jpg')">
-    <header
-        class="fixed font-belleza flex items-center align-middle z-50 top-7 w-screen justify-center text-lg text-white m-0 p-0 h-[70px]">
-        <div class="flex items-center justify-center z-50 w-1/3">
-            <img src="./images/logo.png" class="w-1/3" alt="">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <div class="w-full fixed text-[#FFBB5C] md:bg-transparent bg-[#1D1D1D]">
+        <div x-data="{ open: false }"
+            class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+            <div class="p-4 flex flex-row items-center justify-between h-auto">
+                <a href="/"><img src="./images/logo.png" class="w-1/2" alt=""></a>
+                <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                    <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                        <path x-show="!open" fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                        <path x-show="open" fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <nav :class="{'flex': open, 'hidden': !open}"
+                class="flex-col md:gap-[90px] gap-5 lg:items-center flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                <a href="/"
+                    class="md:text-xl text-md font-belleza no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110 transition duration-300 ">Home</a>
+                <a href="/aboutus"
+                    class="md:text-xl text-md font-belleza no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110  transition duration-300 ">About
+                    Us</a>
+                <a href="/menu"
+                    class="md:text-xl text-md font-belleza no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110  transition duration-300 ">Menu</a>
+                @if(!Session()->has('loginId'))
+                <a href="/login"
+                    class="hover:scale-105 font-belleza transition duration-500 md:text-xl text-md no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold text-center">Login</a>
+                @endif
+            </nav>
         </div>
-        <div class="w-2/3 flex justify-center gap-[90px] items-center">
-            <a href="/"
-                class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110 transition duration-300 ">Home</a>
-            <a href="/aboutus"
-                class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110  transition duration-300 ">About
-                Us</a>
-            <a href="/menu"
-                class="text-xl no-underline z-50 text-white hover:text-[#FFBB5C] hover:scale-110  transition duration-300 ">Menu</a>
-            @if(!Session()->has('loginId'))
-            <a href="/signup"
-                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Sign Up</a>
-            @endif
-            @if(Session()->has('loginId'))
-            <a href="/logout"
-                class="hover:scale-105 transition duration-500 text-xl no-underline z-50 text-white bg-[#ff8400] hover:bg-[#ff9500] px-[30px] py-[6px] rounded-2xl font-bold">Logout</a>
-            @endif
-        </div>
-    </header>
+    </div>
 
     <div class="flex justify-center h-screen w-screen align-middle items-center">
         <div class="flex md:h-4/6 md:w-4/6 w-3/4 h-2/5 rounded-[50px] overflow-hidden">
@@ -49,7 +59,7 @@
             </div>
             <div
                 class="absolute text-center font-bold text-white z-30 md:w-1/3 md:h-2/3 w-2/5 h-2/5 flex justify-center items-center">
-                <p class="lg:text-5xl md:text-xl text-lg">Salmoik <br>Tibo!</p>
+                <p class="font-kaushan font-light lg:text-6xl md:text-xl ">Salmoik <br>Tibo!</p>
             </div>
             <div class="text-white w-1/2 text-center flex justify-center items-center bg-[#1D1D1D] h-full">
                 <div class="md:h-auto h-5/6 w-5/6 items-center flex">

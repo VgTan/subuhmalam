@@ -60,7 +60,7 @@ class AuthController extends Controller
                 
             }
             else{
-                echo('False');
+                return back();
             }
         }
         else {

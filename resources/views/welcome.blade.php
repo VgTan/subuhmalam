@@ -10,219 +10,123 @@
 
 <body class="overflow-x-hidden bg-[url('./images/bg.jpg')] bg-contain" style="background-image: url('./images/bg.jpg')">
     @include('header')
-
-    <!-- <div class="w-screen">
-        <div class="z-30 absolute w-screen flex md:h-[500px] bg-black opacity-[.6] lg:h-[900px] h-[300px] items-center">
-        </div>
-        <div class="absolute flex w-screen lg:h-[900px] md:h-[500px] justify-center items-center text-white z-40">
-            <div class="flex lg:w-3/4">
-                <div class="md:text-center lg:text-left">
-                    <p class="md:text-5xl lg:text-7xl">Padang Lamak Berkualitas<br>Ado di Siko</p>
-                    <p class="pl-2 mt-1 text-gray-300 lg:text-xl">Makanan khas Padang dengan rempah asli
-                        menjadikannya<br>kaya akan cita rasa</p>
-                    <div class="flex md:justify-center lg:justify-start">
-                        <div
-                            class="m-4 ml-2 h-[60px] bg-[#ff8400] hover:bg-[#ffb44a] hover:scale-105 trasition duration-500 w-1/4 cursor-pointer rounded-full rounded-tl-none">
-                            <a href="/menu"
-                                class="h-[60px] no-underline text-white text-2xl flex items-center justify-center">Buy
-                                Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <img class="z-30 w-full lg:h-[900px] md:h-[500px] object-cover" src="./images/PADANG.jpeg">
-    </div> -->
-    <div class="w-screen">
-        <div class="flex w-screen lg:h-[1000px] md:h-[500px] justify-center items-center text-white z-40">
-            <div class="flex h-full">
-                <div class="flex items-center justify-center w-7/12">
-                    <div class="md:text-center lg:text-left grid grid-cols-1 gap-14">
-                        <p class="md:text-5xl lg:text-7xl text-[#ff8400] font-playfair tracking-wide">Padang Lamak
-                            Berkualitas<br>Ado di Siko</p>
-                        <p class="pl-2 mt-1 text-gray-300 lg:text-2xl tracking-wide font-lancelot">Makanan khas Padang dengan rempah
+    <div class="w-screen lg:pt-0 pt-[80px]">
+        <div class="flex w-screen lg:h-[1000px] h-[220px] justify-center items-center text-white z-40">
+            <div class="flex h-full md:text-left text-center md:w-auto w-full">
+                <div class="z-10 flex items-center justify-center md:w-7/12 w-full md:h-auto h-full">
+                    <div class="md:text-center lg:text-left lg:grid grid-cols-1 gap-14">
+                        <p class="md:text-5xl lg:text-7xl text-lg text-[#ff8400] font-playfair tracking-wide">Padang
+                            Lamak
+                            Berkualitas<br> Ado di Siko</p>
+                        <p class="pl-2 mt-1 text-gray-300 md:text-2xl text-sm tracking-wide font-lancelot">Makanan khas
+                            Padang
+                            dengan rempah
                             asli
                             menjadikannya<br>kaya akan cita rasa</p>
-                        <div class="flex md:justify-center lg:justify-start">
+                        <div class="flex justify-center md:justify-start">
                             <a href="/aboutus"
-                                class="no-underline flex justify-center items-center m-4 ml-2 mt-4 h-[60px] w-1/4 bg-[#1D1D1D] hover:bg-[#232323] hover:scale-105 trasition duration-500 cursor-pointer rounded-sm">
-                                <div class="w-11/12 flex justify-between text-center">
-                                    <div class="w-full text-start">
-                                        <div
-                                            class="font-belleza tracking-wide ml-5 w-full h-[60px] text-white text-lg flex items-center">
-                                            About
-                                            Us</div>
-                                    </div>
-                                    <div class="flex justify-end w-full items-center mr-4">
-                                        <img src="./images/arrow.png" class="w-[20px] h-[25px]" alt="">
+                                class="no-underline flex justify-center items-center m-4 ml-2 mt-4 md:h-[60px] md:w-1/4 h-[40px] w-1/4 bg-[#1D1D1D] hover:bg-[#232323] hover:scale-105 trasition duration-500 cursor-pointer rounded-sm">
+                                <div class="md:w-11/12 flex md:justify-between justify-center w-full">
+                                    <p
+                                        class="font-belleza md:w-full tracking-wide md:ml-5 md:h-[60px] h-[40px] text-white md:text-lg text-xs flex items-center">
+                                        About
+                                        Us</p>
+
+                                    <div class="md:flex justify-end w-full items-center mr-4 hidden">
+                                        <img src="./images/arrow.png" class="md:w-[20px] mh-[25px]" alt="">
                                     </div>
                                 </div>
                             </a>
                             <a href="/menu"
-                                class="no-underline flex justify-center items-center mt-4 h-[60px] w-1/4 bg-[#ff8400] hover:bg-[#ff8400e4] hover:scale-105 trasition duration-500 cursor-pointer rounded-sm">
-                                <div class="w-11/12 flex justify-between text-center">
-                                    <div href="/menu"
-                                        class="font-belleza tracking-wide ml-5 h-[60px] text-white text-xl flex items-center justify-center">
+                                class="no-underline flex justify-center items-center m-4 ml-2 mt-4 md:h-[60px] md:w-1/4 h-[40px] w-1/4 bg-[#ff8400] hover:bg-[#ff8c12] hover:scale-105 trasition duration-500 cursor-pointer rounded-sm">
+                                <div class="md:w-11/12 flex md:justify-between justify-center w-full">
+                                    <div
+                                        class="font-belleza md:w-full tracking-wide md:ml-5 md:h-[60px] h-[40px] text-white md:text-lg text-xs flex items-center">
                                         Menu</div>
-                                    <div class="flex justify-end w-full items-center mr-4">
-                                        <img src="./images/arrow.png" class="w-[20px] h-[25px]" alt="">
+                                    <div class="md:flex justify-end w-full items-center mr-4 hidden">
+                                        <img src="./images/arrow.png" class="md:w-[20px] mh-[25px]" alt="">
                                     </div>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="w-5/12 col-span-2 lg:rounded-tl-[200px] lg:rounded-br-[200px] overflow-hidden">
-                    <img class="z-30 w-full h-full object-cover" src="./images/PADANG.jpeg">
+                <div
+                    class="md:w-5/12 md:col-span-2 md:rounded-tl-[200px] md:rounded-br-[200px] overflow-hidden md:relative absolute z-0">
+                    <div
+                        class="z-30 absolute lg:hidden w-full flex md:h-[500px] bg-black opacity-[.5] lg:h-[900px] h-[300px] justify-center items-center">
+                    </div>
+                    <img class="z-30 w-full lg:h-full h-[220px] object-cover" src="./images/PADANG.jpeg">
                 </div>
             </div>
         </div>
     </div>
-    <div class="flex justify-center">
-        <div class="w-4/5">
-            <div class="mt-[100px]">
-                <div class="flex justify-center">
-                    <div class="text-white w-11/12">
-                        <!-- <div class="flex gap-5 items-center ">
-                            <div class="w-auto">
-                                <p class="text-5xl mb-5">Our Signature</p>
-                                <?php
-                                use App\Models\Menu;
-                                $rendang = Menu::where('menu_name', 'Rendang')->first();
-                                ?>
-                                @if($rendang)
-                                <a href="{{'#'. $rendang->id}}" class="scroll-smooth focus:scroll-auto">
-                                    <img class="w-[400px] hover:scale-110 hover:rotate-12 transition duration-500 hover:cursor-pointer border-collapse"
-                                        src="./images/piring_rendang.png" />
-                                </a>
-                                @endif
-                            </div>
-                            <div class="w-2/3">
-                                <p class="text-2xl">Rendang bukan sekedar hidangan, tetapi telah menjadi
-                                    bagian tak terisahkan dari
-                                    budaya dan identitas kuliner Padang,
-                                    Rendang dikenal dengan cita rasa gurih, pedas, dan
-                                    manis
-                                    yang memukau. Kombinasi sempurna antara bumbu rempah dan,
-                                    daging sapi yang dimasak
-                                    dalam waktu lama menjadikannya salah satu hidangan terbaik dari kami.
-                                </p>
-                            </div>
-                        </div> -->
-                        <div class="lg:flex grid justify-center gap-5 items-center">
-                            <div class="lg:w-2/5 flex justify-center">
-                                <?php
-                                $rendang = Menu::where('menu_name', 'Rendang')->first();
-                                ?>
-                                @if($rendang)
-                                <a href="{{'#'. $rendang->id}}" class="scroll-smooth focus:scroll-auto">
-                                    <img class="w-full hover:scale-110 hover:rotate-12 transition duration-500 hover:cursor-pointer border-collapse"
-                                        src="./images/piring_rendang.png" />
-                                </a>
-                                @endif
-                            </div>
-                            <div class="lg:w-3/5 lg:text-left text-center">
-                                <p class="text-xl text-[#ff8400] italic tracking-wide">The Finest
-                                    Dish <br />
-                                </p>
-                                <p class="lg:text-8xl text-3xl mb-10 text-[#ff8400] font-charmonman tracking-wide">Rendang
-                                </p>
-                                <p class="lg:text-2xl text-md font-lancelot tracking-wide">Rendang bukan sekedar hidangan, tetapi telah menjadi
-                                    bagian tak terisahkan dari
-                                    budaya dan identitas kuliner Padang,
-                                    Rendang dikenal dengan cita rasa gurih, pedas, dan
-                                    manis
-                                    yang memukau. Kombinasi sempurna antara bumbu rempah dan,
-                                    daging sapi yang dimasak
-                                    dalam waktu lama menjadikannya salah satu hidangan terbaik dari kami.
-                                </p>
-                                <a href="/menu" class="no-underline flex justify-center items-center mt-4 h-[60px] lg:w-1/4 bg-[#1D1D1D]
+
+
+    <div class="flex justify-center lg:mt-[100px] mt-[50px]">
+        <div class="text-white w-11/12">
+            <div class="lg:flex grid justify-center gap-2 items-center w-full">
+                <div class="lg:w-2/5 flex justify-center">
+                    <a href="" class="scroll-smooth focus:scroll-auto flex lg:justify-end justify-center">
+                        <img class="lg:w-full w-2/5 hover:scale-110 hover:rotate-12 transition duration-500 hover:cursor-pointer border-collapse"
+                            src="./images/piring_rendang.png" />
+                    </a>
+                </div>
+                <div class="lg:w-3/5 w-full lg:text-left text-center flex justify-center">
+                    <div class="lg:full w-5/6">
+                        <p class="lg:text-xl text-sm text-[#ff8400] italic tracking-wide">The Finest
+                            Dish <br />
+                        </p>
+                        <p class="lg:text-8xl text-2xl lg:mb-10 mb-2 text-[#ff8400] font-charmonman tracking-wide">
+                            Rendang
+                        </p>
+                        <p class="lg:text-2xl text-xs font-lancelot tracking-wide">Rendang bukan sekedar
+                            hidangan, tetapi telah menjadi
+                            bagian tak terisahkan dari
+                            budaya dan identitas kuliner Padang,
+                            Rendang dikenal dengan cita rasa gurih, pedas, dan
+                            manis
+                            yang memukau. Kombinasi sempurna antara bumbu rempah dan,
+                            daging sapi yang dimasak
+                            dalam waktu lama menjadikannya salah satu hidangan terbaik dari kami.
+                        </p>
+                        <a href="/menu" class="no-underline flex justify-center items-center mt-4 lg:h-[60px] lg:w-1/2 h-[40px] w-full bg-[#1D1D1D]
                                     hover:bg-[#232323] hover:scale-105 trasition duration-500 cursor-pointer
                                     rounded-sm">
-                                    <div class="w-11/12 flex justify-between text-center">
-                                        <div class="w-full text-start">
-                                            <div
-                                                class="lg:text-lg text-md font-belleza tracking-wide pl-5 w-full h-[60px] text-white flex items-center">
-                                                Menu</div>
-                                        </div>
-                                        <div class="flex justify-end w-full items-center mr-4">
-                                            <img src="./images/arrow.png" class="w-[20px] h-[25px]" alt="">
-                                        </div>
+                            <div class="w-11/12 flex justify-between text-center">
+                                <div class="w-full text-start">
+                                    <div
+                                        class="lg:text-lg text-sm font-belleza tracking-wide pl-5 w-full h-[60px] text-white flex items-center">
+                                        Menu
                                     </div>
-                                </a>
+                                </div>
+                                <div class="flex justify-end w-full items-center mr-4">
+                                    <img src="./images/arrow.png" class="lg:w-[20px] lg:h-[25px] w-[15px]" alt="">
+                                </div>
                             </div>
-                        </div>
+                        </a>
+
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-    <div class="mt-[70px] pt-[50x] pb-[50px] grid grid-cols-auto justify-center bg-gradient-to-b from- to-transparant">
-        <!-- <div class="text-white">
-            <div class="text-center">
-                <p class="text-5xl mb-5">Explore Our Dishes</p>
-            </div>
-        </div> -->
-        <?php
-            $i = 0;
-        ?>
-        <!-- <div class="mt-[70px]">
-            <div class="flex flex-wrap gap-9 justify-center items-center">
-                @foreach ($menu as $obj)
-                @if($i < 3)
-                    <a href="{{ url('/menu' . '#' . $obj->id) }}" id="{{$obj->id}}"
-                        class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl"
-                        id="{{$obj->id}}">
-                        <div class="w-full flex justify-center h-full items-center">
-                            <div class="w-3/4 h-full">
-                                <div class="flex justify-center h-2/3">
-                                    <img class="object-contain h-full" src="/images/menu/{{$obj->image}}" alt="">
-                                </div>
-                                <div class="grid grid-cols-3 grid-flow-row">
-                                    <div class="grid grid-rows-2 col-span-2 gap-2 items-center">
-                                        <p class="text-2xl col-span-2">{{$obj->menu_name}}</p>
-                                        <p class="lg:text-lg text-sm">Rp {{$obj->price}}</p>
-                                    </div>
-                                    <form action="{{route('addtocart')}}"
-                                        class="text-white w-full grid grid-rows-2 gap-2" method="post">
-                                        @csrf
-                                        <input class="hidden" type="text" name="id" value="{{ $obj->id }}" />
-                                        <div class="flex justify-end items-center">
-                                            <input class="text-black w-2/3 h-[30px]" name="quantity" type="number">
-                                        </div>
-                                        <div class="flex justify-end">
-                                            <input type="submit" value="Add"
-                                                class="bg-[#F29A4B] px-3 w-2/3 rounded-xl hover:scale-105 focus:scale-75 transition duration-500">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <?php
-                    // $i++;
-                    ?>
-                    @endif
-                    @endforeach
-            </div>
-        </div> -->
+
+    <div class="lg:mt-[70px] mt-[30px] lg:pt-[50x] lg:pb-[50px] grid grid-cols-auto justify-center">
         <div class="">
-            <form action="{{ route('filter_menu') }}" class="flex flex-wrap gap-9 justify-center items-center">
+            <form action="{{ route('filter_menu') }}" class="flex flex-wrap lg:gap-9 gap-2 justify-center items-center">
                 @csrf
                 <button type="submit" name="category" value="main_course"
-                    class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl rounded-tl-[200px] rounded-br-[200px]"
-                   >
-                    <div class="w-full flex justify-center items-center">
-                        <div class="">
-                            <div class="flex justify-center h-1/3">
-                                <img class="object-contain h-[250px] rounded-xl" src="/images/piring_rendang.png"
-                                    alt="">
+                    class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 lg:w-[350px] lg:h-[450px] w-[110px] h-[150px] shadow-2xl lg:rounded-tl-[200px] lg:rounded-br-[200px]">
+                    <div class="w-full lg:flex grid justify-center items-center">
+                        <div class="w-full lg:h-full">
+                            <div class="flex justify-center lg:h-1/3">
+                                <img class="object-contain lg:h-[250px] h-[90px] rounded-xl" src="/images/piring_rendang.png" alt="">
                             </div>
                             <div class="flex justify-center items-center h-full">
-                                <div class="text-center h-2/3 w-2/3">
-                                    <p class="text-4xl font-playfair">Main Dishes</p>
-                                    <p class="mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
+                                <div class="text-center h-2/3 w-3/3">
+                                    <p class="lg:text-4xl text-sm font-playfair">Main Dishes</p>
+                                    <p class="lg:block hidden mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
                                         cita rasa pedas,
                                         manis,
                                         dan
@@ -233,18 +137,17 @@
                     </div>
                 </button>
 
-                <button type="submit" name="category" value="side_dish" id=""
-                    class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl rounded-tl-[200px] rounded-br-[200px]"
-                    id="">
-                    <div class="w-full flex justify-center items-center">
-                        <div class="w-full h-full">
-                            <div class="flex justify-center h-1/3">
-                                <img class="object-contain h-[250px] rounded-xl" src="/images/potatoes.png" alt="">
+                <button type="submit" name="category" value="side_dish"
+                    class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 lg:w-[350px] lg:h-[450px] w-[110px] h-[150px] shadow-2xl lg:rounded-tl-[200px] lg:rounded-br-[200px]">
+                    <div class="w-full lg:flex grid justify-center items-center">
+                        <div class="w-full lg:h-full">
+                            <div class="flex justify-center lg:h-1/3">
+                                <img class="object-contain lg:h-[250px] h-[90px] rounded-xl" src="/images/potatoes.png" alt="">
                             </div>
                             <div class="flex justify-center items-center h-full">
                                 <div class="text-center h-2/3 w-2/3">
-                                    <p class="text-4xl font-playfair">Side Dishes</p>
-                                    <p class="mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
+                                    <p class="lg:text-4xl text-sm font-playfair">Side Dishes</p>
+                                    <p class="lg:block hidden mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
                                         cita rasa pedas,
                                         manis,
                                         dan
@@ -255,19 +158,17 @@
                     </div>
                 </button>
 
-                <button type="submit" name="category" value="extra" id=""
-                    class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 w-[350px] h-[450px] shadow-2xl rounded-tl-[200px] rounded-br-[200px]"
-                    id="">
-                    <div class="w-full flex justify-center items-center">
-                        <div class="w-full h-full">
-                            <div class="flex justify-center h-1/3">
-                                <img class="object-contain h-[250px] rounded-xl" src="/images/drink.png"
-                                    alt="">
+                <button type="submit" name="category" value="extra"
+                    class="no-underline text-white hover:scale-105 bg-[#1D1D1D] bg-opacity-80 rounded-xl hover:bg-[#F29A4B] hover:bg-opacity-70 transition duration-300 lg:w-[350px] lg:h-[450px] w-[110px] h-[150px] shadow-2xl lg:rounded-tl-[200px] lg:rounded-br-[200px]">
+                    <div class="w-full lg:flex grid justify-center items-center">
+                        <div class="w-full lg:h-full">
+                            <div class="flex justify-center lg:h-1/3">
+                                <img class="object-contain lg:h-[250px] h-[90px] rounded-xl" src="/images/drink.png" alt="">
                             </div>
                             <div class="flex justify-center items-center h-full">
                                 <div class="text-center h-2/3 w-2/3">
-                                    <p class="text-4xl font-playfair">Drinks</p>
-                                    <p class="mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
+                                    <p class="lg:text-4xl text-sm font-playfair">Drinks</p>
+                                    <p class="lg:block hidden mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
                                         cita rasa pedas,
                                         manis,
                                         dan

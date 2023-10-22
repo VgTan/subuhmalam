@@ -19,7 +19,8 @@ export default {
         'lancelot' : ['lancelot'],
         'worksans' : ['worksans'],
         'balo' : ['balobhai'],
-        'archivobold' : ['archivobold']
+        'archivobold' : ['archivobold'],
+        'kaushan' : ['kaushan']
       },
     },
   },
