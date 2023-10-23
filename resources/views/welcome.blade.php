@@ -124,7 +124,7 @@
                                 <img class="object-contain lg:h-[250px] h-[90px] rounded-xl" src="/images/piring_rendang.png" alt="">
                             </div>
                             <div class="flex justify-center items-center h-full">
-                                <div class="text-center h-2/3 w-3/3">
+                                <div class="text-center h-2/3 w-2/3">
                                     <p class="lg:text-4xl text-sm font-playfair">Main Dishes</p>
                                     <p class="lg:block hidden mt-2 text-sm">Hidangan-hidangan yang memikat dengan rempah-rempah khas,
                                         cita rasa pedas,
