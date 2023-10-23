@@ -8,33 +8,36 @@
         </div>
         <div class="flex flex-col md:flex-row md:space-x-6">
             <div class="text-center md:text-left mb-4 md:mb-0">
-                <p class="text-xl">Contact</p>
-                <div class="flex items-center justify-center mt-2">
+                <p class="lg:text-2xl font-archivobold text-xl">Contact</p>
+                <div class="flex items-center lg:justify-start justify-center mt-2">
                     <img src="./images/telphone.png" alt="Phone" class="w-6 md:w-8" />
-                    <p class="text-xs ml-2">0821-2345-777</p>
+                    <p class="lg:text-lg lg:ml-0 text-xs ml-2">0821-2345-777</p>
                 </div>
-                <div class="flex items-center justify-center mt-2">
+                <div class="flex items-center lg:justify-start justify-center mt-2">
                     <img src="./images/email.png" alt="Email" class="w-6 md:w-8" />
-                    <p class="text-xs ml-2">subuhmalam@gmail.com</p>
+                    <p class="lg:text-lg lg:ml-0 text-xs ml-2">subuhmalam@gmail.com</p>
                 </div>
             </div>
             <div class="text-center md:text-left mb-4 md:mb-0">
-                <p class="text-xl">Location</p>
-                <div class="flex items-center justify-center mt-2">
+                <p class="lg:text-2xl font-archivobold
+                 text-xl">Location</p>
+                <div class="flex items-center lg:justify-start justify-center mt-2">
                     <img src="./images/location.png" alt="Location" class="w-6 md:w-8" />
-                    <p class="text-xs ml-2">Jl. Scientia Square Barat 1 No. 400, Medang, Kabupaten Tangerang, Banten.
+                    <p class="lg:text-lg lg:ml-0 text-xs ml-2">Jl. Scientia Square Barat 1 No. 400, Medang, Kabupaten
+                        Tangerang, Banten.
                     </p>
                 </div>
             </div>
             <div class="text-center md:text-left">
-                <p class="text-xl">Follow Us</p>
-                <div class="flex items-center justify-center mt-2">
+                <p class="lg:text-2xl font-archivobold
+                 text-xl">Follow Us</p>
+                <div class="flex items-center lg:justify-start justify-center mt-2">
                     <img src="./images/instagram.png" alt="Instagram" class="w-6 md:w-8" />
-                    <p class="text-xs ml-2">@subuhmalamresto</p>
+                    <p class="lg:text-lg lg:ml-0 text-xs ml-2">@subuhmalamresto</p>
                 </div>
                 <div class="flex items-center justify-center mt-2">
                     <img src="./images/twitter.png" alt="Twitter" class="w-6 md:w-8" />
-                    <p class="text-xs ml-2">@subuhmalamresto</p>
+                    <p class="lg:text-lg lg:ml-0 text-xs ml-2">@subuhmalamresto</p>
                 </div>
             </div>
         </div>

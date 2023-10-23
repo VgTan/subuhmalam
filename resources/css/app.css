@@ -51,3 +51,302 @@
     font-family: 'kaushan';
     src: url('/resources/css/fonts/KaushanScript-Regular.ttf');
   }
+
+  .topCSS {
+    padding-left: 2%;
+    opacity: 0;
+    animation: slideInFromLeft 1.5s ease-in-out forwards;
+}
+.imgPadang {
+    transition: 1s ease-in-out;
+}
+.longTextCSS {
+    word-wrap: break-word;
+}
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(-10%);
+}
+
+.animate-on-scroll2 {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.animate-on-scroll2.animated {
+    opacity: 1;
+    transform: translateY(-10%);
+}
+
+.animate-on-scroll3 {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 1s ease, transform 2s ease;
+}
+
+.animate-on-scroll3.animated {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.animate-on-scroll4 {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.animate-on-scroll4.animated {
+    opacity: 1;
+    transform: translateY(-10%);
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.topContainer img {
+  width: 100%;
+  z-index: -1;
+}
+
+.topContainer {
+  position: relative;
+  text-align: center;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  /* Posisi vertikal di tengah */
+  left: 50%;
+  /* Posisi horizontal di tengah */
+  transform: translate(-50%, -50%);
+  /* Untuk menggeser teks ke tengah */
+  z-index: 2;
+}
+
+.terbaek-animation {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 900px;
+  letter-spacing: 3px;
+  opacity: 0;
+  animation: slideInFromBottom 1s ease-in-out forwards;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+      transform: translateY(100%);
+      opacity: 0;
+  }
+
+  100% {
+      transform: translateY(-50%);
+      opacity: 1;
+  }
+}
+
+
+.background {
+  width: 100%;
+  height: 500px;
+  background-color: rgb(119, 79, 43);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+  margin-top: -2rem;
+  overflow: hidden;
+}
+
+.background img {
+  width: 400px;
+  height: auto;
+  margin-right: 50px;
+}
+
+.background p {
+  color: white;
+  letter-spacing: 2px;
+  word-wrap: break-word;
+  max-width: 500px;
+  text-align: left;
+}
+
+.middleContainer h1 {
+  text-align: center;
+  color: white;
+}
+
+.card3 {
+  background-color: #1D1D1D;
+  border-radius: 20px;
+  box-shadow: 2px 5px 10px 0px #F29A4B;
+}
+
+.selebritiContainer {
+  color: white;
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.card3 p {
+  word-wrap: break-word;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.card3 img {
+  width: 100%;
+  height: 160px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.legacy {
+  text-align: center;
+  margin-top: 60px;
+  color: wheat;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(-10%);
+}
+
+.animate-on-scroll2 {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 1s ease, transform 1.5s ease;
+}
+
+.animate-on-scroll2.animated {
+  opacity: 1;
+  transform: translateY(-10%);
+}
+
+.animate-on-scroll3 {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 1s ease, transform 2s ease;
+}
+
+.animate-on-scroll3.animated {
+  opacity: 1;
+  transform: translateY(-10%);
+}
+
+.animate-on-scroll4 {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 1s ease, transform 2.5s ease;
+}
+
+.animate-on-scroll4.animated {
+  opacity: 1;
+  transform: translateY(-10%);
+}
+
+.animate-on-scroll-left-to-right {
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 1s ease, transform 2s ease;
+}
+
+.animate-on-scroll-left-to-right.animated {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.card3:hover {
+  cursor: pointer;
+  background-color: rgb(246, 128, 26);
+  transform: translateY(-20%);
+  transition: 0.5s;
+}
+
+.kartu:hover {
+  transition: .56s;
+}
+
+
+
+@media (max-width: 748px) {
+  .background {
+      width: 100%;
+      height: 250px;
+      background-color: rgb(119, 79, 43);
+      border-radius: 50px;
+      margin-bottom: 70px;
+      margin-top: -2rem;
+      flex-direction: column;
+  }
+
+  .background img {
+      width: 100px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 0;
+  }
+
+  .background p {
+      color: white;
+      letter-spacing: 2px;
+      word-wrap: break-word;
+      text-align: center;
+  }
+
+  .selebritiContainer {
+      margin-top: 80px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .legacy {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 25px;
+      color: wheat;
+  }
+}

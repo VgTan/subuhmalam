@@ -89,7 +89,8 @@
         </div>
     </div>
     <div class="flex justify-center h-screen w-screen align-middle items-center">
-        <div class="flex flex-col md:flex-row w-[100%] h-[70%] md:h-[80%] md:w-[80%] rounded-[50px] md:overflow-hidden md:mt-20">
+        <div
+            class="flex flex-col md:flex-row w-[100%] h-[70%] md:h-[80%] md:w-[80%] rounded-[50px] md:overflow-hidden md:mt-20">
 
             <div class="w-[100%] md:w-1/2 blur-[3.5px]">
                 <div
@@ -99,8 +100,8 @@
             </div>
 
             <div
-                class="absolute text-center font-bold text-white md:w-[40%] md:h-[70%] w-[100%] h-[20%] flex justify-center items-center">
-                <p class="font-kaushan lg:text-5xl md:text-xl text-lg">Salmoik <br>Tibo!</p>
+                class="absolute text-center font-bold text-white md:w-[40%] md:h-[80%] w-[100%] h-[25%] flex justify-center items-center">
+                <p class="lg:text-5xl md:text-xl font-kaushan font-light text-3xl">Salamoik <br>Tibo!</p>
             </div>
 
             <div class="text-white w-full md:w-1/2 text-center flex justify-center items-center bg-[#1D1D1D] h-full">
