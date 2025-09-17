@@ -96,7 +96,7 @@
             <div class="flex justify-center">
                 <div class="rounded-md mt-2 h-auto hover:scale-105 py-[8px] 
                     transition duration-500 focus:scale-90 ">
-                    <a href="/menu" class="no-underline text-white lg:text-xl hover:text[#ff8400] px-[50px] py-[8px]">Delete
+                    <a href="/menu" class="no-underline text-white lg:text-xl hover:text[#ff8400] px-[50px] py-[8px]">Add
                         Menu</a>
                 </div>
             </div>
